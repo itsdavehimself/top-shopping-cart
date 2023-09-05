@@ -9,6 +9,7 @@
 }
 
 .secondary-info-container {
+  margin: 100px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -17,6 +18,7 @@
 }
 
 .about-us-container {
+  margin: 200px 0 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,5 +37,5 @@
 .hero-img,
 .secondary-text,
 .about-us-paragraph {
-  max-width: 640px;
+  max-width: 580px;
 }
