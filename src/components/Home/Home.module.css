@@ -1,0 +1,39 @@
+.hero-container {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  gap: 80px;
+}
+
+.secondary-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.hero-text,
+.hero-img,
+.secondary-text,
+.about-us-paragraph {
+  max-width: 640px;
+}
