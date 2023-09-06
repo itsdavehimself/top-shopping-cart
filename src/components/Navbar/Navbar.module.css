@@ -1,8 +1,24 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 0 24px;
+  z-index: 1000;
+}
+
+.logo-container {
+  padding-left: 5%;
+}
+
+.nav-btns {
+  display: flex;
+  flex-direction: row;
+  flex: 0.2;
+  justify-content: space-around;
+  padding-right: 5%;
 }

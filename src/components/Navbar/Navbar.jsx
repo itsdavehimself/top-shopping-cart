@@ -4,8 +4,8 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   return (
     <header className={styles.navbar}>
-      <div className="logo-container">Logo Here</div>
-      <div className="nav-btns">
+      <div className={styles['logo-container']}>Logo Here</div>
+      <div className={styles['nav-btns']}>
         <Link to="home">
           <button>Home</button>
         </Link>
