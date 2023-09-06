@@ -25,7 +25,7 @@ export default function Footer() {
           <p>Home</p>
           <p>Shop</p>
           <p>Project Repository</p>
-          <p>David's Github</p>
+          <p>David&apos;s Github</p>
         </div>
       </div>
       <div className={styles.bottom}>
