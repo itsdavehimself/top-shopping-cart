@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <img className={styles['hero-img']} src="/rtx-4090-hero.png"></img>
       </div>
-      <div className={styles['secondary-info-container']}>
+      <div className={styles['secondary-container']}>
         <img className={styles['hero-img']} src="/rtx-4090-hero.png"></img>
         <div className={styles['secondary-text']}>
           <h2>We don&apos;t play around...</h2>
@@ -50,7 +50,7 @@ export default function Home() {
       <div className={styles['about-us-container']}>
         <h2>Changing the face of gaming.</h2>
         <div className={styles['about-us-text']}>
-          <div className={styles['about-us-paragraph']}>
+          <div className={styles['about-paragraph']}>
             <p>
               With a legacy spanning decades, our company is deeply rooted in
               the ever-evolving world of gaming and technology. From our humble
@@ -71,7 +71,7 @@ export default function Home() {
               need them most.
             </p>
           </div>
-          <div className={styles['about-us-paragraph']}>
+          <div className={styles['about-paragraph']}>
             <p>
               Our commitment to the gaming and technology sector goes beyond
               business; it&apos;s a genuine passion that drives us. We
