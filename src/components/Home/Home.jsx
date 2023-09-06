@@ -42,6 +42,9 @@ export default function Home() {
             and embark on this exciting journey with us. Get ready to elevate
             your gaming experience like never before!
           </p>
+          <Link to="/shop">
+            <button>Explore our gear</button>
+          </Link>
         </div>
       </div>
       <div className={styles['about-us-container']}>
