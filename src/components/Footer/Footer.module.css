@@ -6,13 +6,18 @@
   color: #fff;
 }
 
+h3 {
+  font-weight: 800;
+}
+
 .top {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex: 1;
   gap: 300px;
+  padding-top: 3%;
 }
 
 .about {
@@ -31,8 +36,30 @@
   height: 60px;
 }
 
+.bottom > p {
+  font-size: 0.85rem;
+}
+
 .about,
 .shop,
 .links {
   max-width: 580px;
+}
+
+.about > p {
+  font-size: 0.85rem;
+}
+
+.shop > p,
+.links > p {
+  padding: 8px 0;
+  color: #c0c0c0;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.shop > p:hover,
+.links > p:hover {
+  cursor: pointer;
+  color: #fff;
 }
