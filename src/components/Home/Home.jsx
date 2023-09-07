@@ -25,7 +25,7 @@ export default function Home() {
         <img className={styles['hero-img']} src="/rtx-4090-hero.png"></img>
       </div>
       <div className={styles['secondary-container']}>
-        <img className={styles['hero-img']} src="/rtx-4090-hero.png"></img>
+        <img className={styles['hero-img']} src="/controller-hand.png"></img>
         <div className={styles['secondary-text']}>
           <h2>
             We <span className={styles.bold}>don&apos;t</span> play around.
