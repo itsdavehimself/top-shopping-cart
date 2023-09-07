@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -24,10 +25,14 @@ export default function Footer() {
         </div>
         <div className={styles.links}>
           <h3>OTHER LINKS</h3>
-          <p>Home</p>
-          <p>Shop</p>
-          <p>Project Repository</p>
-          <p>David&apos;s Github</p>
+          <div className={styles.link}>
+            <Link to="/home">Home</Link>
+            <Link to="/shop">Shop</Link>
+            <a href="https://github.com/itsdavehimself/top-shopping-cart">
+              Project Repository
+            </a>
+            <a href="https://github.com/itsdavehimself">David&apos;s Github</a>
+          </div>
         </div>
       </div>
       <div className={styles.bottom}>
