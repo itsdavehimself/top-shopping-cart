@@ -8,7 +8,7 @@ export default function Footer() {
           <h3>ABOUT THE PROJECT</h3>
           This project was made as part of The Odin Project&apos;s JavaScript
           curriculum. The purpose of this shopping cart project is to explore
-          and utilize ReactJS, React testing, and react routing in conjunction
+          and utilize ReactJS, React testing, and React routing in conjunction
           with CSS modules. The site is made fully responsive to work and look
           good both on mobile and desktop.
         </div>
