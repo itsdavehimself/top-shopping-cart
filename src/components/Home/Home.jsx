@@ -29,18 +29,11 @@ export default function Home() {
             it&apos;s a way of life, and it&apos;s just as important to us as it
             is to you. Our commitment is to provide you with the very best in
             gaming components and accessories, along with unparalleled support.
-            Our product range is a gamer&apos;s paradise, featuring everything
-            from cutting-edge graphics cards that bring your games to life to
-            peripherals that respond to your every move with precision. But
-            it&apos;s not just about the gear; it&apos;s about the experience.
             Our team, comprised of passionate gamers, is available 24/7 to
-            assist you with any gaming-related challenges you may encounter. We
-            take immense pride in ensuring that your gaming setup is as
-            exceptional as your in-game achievements. Because when you succeed,
-            we succeed, and together, we&apos;re dedicated to enhancing the
-            gaming world. So, explore our curated selection of gaming equipment
-            and embark on this exciting journey with us. Get ready to elevate
-            your gaming experience like never before!
+            assist you with any gaming-related challenges you may encounter. So,
+            explore our curated selection of gaming equipment and embark on this
+            exciting journey with us. Get ready to elevate your gaming
+            experience like never before!
           </p>
           <Link to="/shop">
             <button>Explore our gear</button>
