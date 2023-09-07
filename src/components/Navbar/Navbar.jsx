@@ -8,6 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const navbar = document.querySelector(`.${styles.navbar}`);
+    const btns = document.querySelectorAll(`.${styles.btn}`);
     let lastScrollY = window.scrollY;
 
     function handleScroll() {
@@ -22,11 +23,21 @@ export default function Navbar() {
       if (currentScrollY >= 1) {
         navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
         navbar.style.backdropFilter = 'blur(1px)';
-        navbar.style.borderBottom = '#dadada solid 1px';
+        navbar.style.borderBottom = '#cacaca solid 1px';
+        if (isShopPage) {
+          btns.forEach((btn) => {
+            btn.style.color = '#212227';
+          });
+        }
       } else {
         navbar.style.backgroundColor = 'transparent';
         navbar.style.borderBottom = 'rgba(255, 255, 255, 0) solid 1px';
         navbar.style.backdropFilter = 'blur(0px)';
+        if (isShopPage) {
+          btns.forEach((btn) => {
+            btn.style.color = '#fff';
+          });
+        }
       }
 
       lastScrollY = currentScrollY;
@@ -37,8 +48,21 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [location, isShopPage]);
 
+  useEffect(() => {
+    const btns = document.querySelectorAll(`.${styles.btn}`);
+
+    if (isShopPage) {
+      btns.forEach((btn) => {
+        btn.style.color = '#fff';
+      });
+    } else {
+      btns.forEach((btn) => {
+        btn.style.color = '#212227';
+      });
+    }
+  }, [isShopPage]);
   return (
     <header className={styles.navbar}>
       <div className={styles['logo-container']}>Logo Here</div>
