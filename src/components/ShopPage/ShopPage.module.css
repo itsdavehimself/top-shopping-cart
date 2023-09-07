@@ -27,6 +27,27 @@
 .categories {
   flex: 0.2;
   border-right: solid #cacaca 1px;
+  padding-right: 12px;
+}
+
+.category-title {
+  font-size: 1.3rem;
+}
+
+.category-links {
+  color: #727272;
+}
+
+.category-links > p {
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.category-links > p:hover {
+  cursor: pointer;
+  background-color: #dadada;
+  color: #212227;
 }
 
 .catalogue {

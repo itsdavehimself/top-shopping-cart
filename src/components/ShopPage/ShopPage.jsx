@@ -7,11 +7,13 @@ export default function ShoppingPage() {
       <div className={styles.banner}>GAME SHOP</div>
       <div className={styles.shop}>
         <div className={styles.categories}>
-          <h3>Categories</h3>
-          <p>Gaming Computers</p>
-          <p>Gaming Monitors</p>
-          <p>PC Accessories</p>
-          <p>PC Components</p>
+          <h3 className={styles['category-title']}>Categories</h3>
+          <div className={styles['category-links']}>
+            <p>Gaming Computers</p>
+            <p>Gaming Monitors</p>
+            <p>PC Accessories</p>
+            <p>PC Components</p>
+          </div>
         </div>
         <div className={styles.catalogue}>
           <ItemCard />
