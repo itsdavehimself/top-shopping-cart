@@ -20,13 +20,22 @@ export default function Navbar() {
         navbar.style.transform = 'translateY(0)';
       }
 
-      if (currentScrollY >= 1) {
+      if (currentScrollY >= 300) {
         navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
         navbar.style.backdropFilter = 'blur(1px)';
         navbar.style.borderBottom = '#cacaca solid 1px';
         if (isShopPage) {
           btns.forEach((btn) => {
             btn.style.color = '#212227';
+          });
+        }
+      } else if (currentScrollY >= 1 && currentScrollY < 299) {
+        navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
+        navbar.style.backdropFilter = 'blur(1px)';
+        navbar.style.borderBottom = '#cacaca solid 1px';
+        if (isShopPage) {
+          btns.forEach((btn) => {
+            btn.style.color = '#fff';
           });
         }
       } else {

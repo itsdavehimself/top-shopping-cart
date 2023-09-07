@@ -13,7 +13,8 @@
     url('./shop-hero.jpg');
   background-position: center;
   color: #fff;
-  font-size: 4rem;
+  font-size: 3.4rem;
+  font-weight: 800;
 }
 
 .shop {
