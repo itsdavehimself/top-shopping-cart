@@ -10,6 +10,7 @@ export default function ItemCard() {
         </p>
         <div className={styles.rating}>Rating Goes Here</div>
         <p className={styles.price}>$159.99</p>
+        <button className={styles.btn}>ADD TO CART</button>
       </div>
     </div>
   );

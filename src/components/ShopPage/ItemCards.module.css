@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 392px;
   max-width: 274px;
+  padding: 28px;
 }
 
 .img {
@@ -27,4 +28,10 @@
 
 .price {
   margin: 10% 0;
+}
+
+.btn {
+  align-self: center;
+  height: 28px;
+  width: 136px;
 }
