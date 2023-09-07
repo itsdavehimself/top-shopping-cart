@@ -1,4 +1,5 @@
 import styles from './ShopPage.module.css';
+import ItemCard from './ItemCards';
 
 export default function ShoppingPage() {
   return (
@@ -13,15 +14,15 @@ export default function ShoppingPage() {
           <p>PC Components</p>
         </div>
         <div className={styles.catalogue}>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
-          <div className={styles['product-card']}>Item</div>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
         </div>
       </div>
     </>
