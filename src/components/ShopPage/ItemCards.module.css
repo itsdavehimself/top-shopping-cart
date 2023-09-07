@@ -26,8 +26,18 @@
   margin: 0;
 }
 
+.product-name {
+  font-weight: 500;
+}
+
 .price {
-  margin: 10% 0;
+  margin: 5% 0;
+  font-weight: 700;
+}
+
+.rating {
+  font-weight: 300;
+  font-size: 0.9rem;
 }
 
 .btn {
