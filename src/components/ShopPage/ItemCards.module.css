@@ -1,0 +1,30 @@
+.card {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 392px;
+  max-width: 274px;
+}
+
+.img {
+  height: 192px;
+  width: 274px;
+  background-color: #dadada;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.product-name,
+.price,
+.rating {
+  margin: 0;
+}
+
+.price {
+  margin: 10% 0;
+}
