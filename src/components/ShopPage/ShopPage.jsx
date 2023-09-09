@@ -6,7 +6,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 
 export default function ShoppingPage() {
   const { data, loading, error } = FetchAPI(
-    'https://api.bestbuy.com/v1/products((search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=customerReviewCount.asc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=24&format=json',
+    'https://api.bestbuy.com/v1/products((search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=bestSellingRank.dsc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=24&format=json',
   );
 
   if (loading) {
@@ -33,8 +33,8 @@ export default function ShoppingPage() {
           <div className={styles['category-links']}>
             <p>Gaming Computers</p>
             <p>Gaming Monitors</p>
-            <p>PC Accessories</p>
-            <p>PC Components</p>
+            <p>Gaming Laptops</p>
+            <p>Graphic Cards</p>
           </div>
         </div>
         <div className={styles.products}>
@@ -45,7 +45,8 @@ export default function ShoppingPage() {
                 key={product.sku}
                 image={product.image}
                 product={product.name}
-                rating={product.customerReviewAverage}
+                ratingAvg={product.customerReviewAverage}
+                ratingCount={product.customerReviewCount}
                 price={product.regularPrice}
               />
             ))}

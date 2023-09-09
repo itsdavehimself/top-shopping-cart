@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export default function ItemCard({
   image,
   product = 'Placeholder Product Title For Development Purposes',
-  rating = '5.0',
+  ratingAvg = '5.0',
+  ratingCount = '(2352)',
   price = '159.99',
 }) {
   return (
@@ -14,7 +15,9 @@ export default function ItemCard({
       </div>
       <div className={styles['info']}>
         <p className={styles['product-name']}>{product}</p>
-        <div className={styles.rating}>{rating}</div>
+        <div className={styles.rating}>
+          User Rating: {ratingAvg} ({ratingCount})
+        </div>
         <p className={styles.price}>${price}</p>
         <button className={styles.btn}>ADD TO CART</button>
       </div>
@@ -25,6 +28,7 @@ export default function ItemCard({
 ItemCard.propTypes = {
   image: PropTypes.string.isRequired,
   product: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
+  ratingAvg: PropTypes.string.isRequired,
+  ratingCount: PropTypes.string.isRequired,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
