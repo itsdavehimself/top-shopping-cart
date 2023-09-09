@@ -94,6 +94,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   margin-top: -40px;
+  font-size: 2rem;
 }
 
 .btn {
