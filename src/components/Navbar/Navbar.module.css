@@ -14,8 +14,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-.logo-container {
-  padding-left: 5%;
+.logo {
+  color: #212227;
+  font-size: 2rem;
+  font-weight: 900;
+  padding-left: 15%;
 }
 
 .nav-btns {

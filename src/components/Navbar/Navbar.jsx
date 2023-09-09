@@ -61,20 +61,25 @@ export default function Navbar() {
 
   useEffect(() => {
     const btns = document.querySelectorAll(`.${styles.btn}`);
+    const logo = document.querySelector(`.${styles.logo}`);
 
     if (isShopPage) {
       btns.forEach((btn) => {
         btn.style.color = '#fff';
       });
+      logo.style.color = '#fff';
     } else {
       btns.forEach((btn) => {
         btn.style.color = '#212227';
       });
+      logo.style.color = '#212227';
     }
   }, [isShopPage]);
   return (
     <header className={styles.navbar}>
-      <div className={styles['logo-container']}>Logo Here</div>
+      <Link to="/home">
+        <div className={styles.logo}>1337MARKET</div>
+      </Link>
       <div className={styles['nav-btns']}>
         <Link to="home">
           <button className={styles.btn}>Home</button>
