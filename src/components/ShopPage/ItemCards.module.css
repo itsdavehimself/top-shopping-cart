@@ -13,7 +13,7 @@
   align-items: center;
   height: 175px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .img img {
@@ -37,11 +37,13 @@
 
 .product-name {
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .price {
   margin: 5% 0 0 0;
   font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .rating {

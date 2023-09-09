@@ -1,7 +1,29 @@
 import styles from './ShopPage.module.css';
+import LoadingPage from '../Loading/Loading';
 import ItemCard from './ItemCards';
+import FetchAPI from '../API/FetchAPI';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 export default function ShoppingPage() {
+  const { data, loading, error } = FetchAPI(
+    'https://api.bestbuy.com/v1/products((search=Gaming&search=Desktops))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=customerReviewCount.asc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=24&format=json',
+  );
+
+  if (loading) {
+    return (
+      <div>
+        <LoadingPage />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <ErrorPage />
+      </div>
+    );
+  }
   return (
     <>
       <div className={styles.banner}>GAME SHOP</div>
@@ -16,15 +38,15 @@ export default function ShoppingPage() {
           </div>
         </div>
         <div className={styles.catalogue}>
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
-          <ItemCard />
+          {data.products.map((product) => (
+            <ItemCard
+              key={product.sku}
+              image={product.image}
+              product={product.name}
+              rating={product.customerReviewAverage}
+              price={product.regularPrice}
+            />
+          ))}
         </div>
       </div>
     </>
