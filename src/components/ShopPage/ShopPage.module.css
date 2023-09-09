@@ -24,8 +24,14 @@
   margin: 0 12%;
 }
 
+.total {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 50px 0 36px 0;
+}
+
 .categories {
-  flex: 0.2;
+  flex: 0.5;
   border-right: solid #cacaca 1px;
   padding-right: 12px;
 }
@@ -50,7 +56,13 @@
   color: #212227;
 }
 
-.catalogue {
+.products {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+}
+
+.catalog {
   flex: 1;
   display: grid;
   justify-content: center;
