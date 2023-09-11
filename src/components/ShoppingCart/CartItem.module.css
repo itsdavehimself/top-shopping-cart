@@ -1,0 +1,46 @@
+.item-card {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0 16px 0;
+  gap: 16px;
+}
+
+.item-info {
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.image {
+  background-color: #e0e0e0;
+  height: 175px;
+  width: 236.95px;
+}
+
+.item-price {
+  font-weight: 700;
+}
+
+.item-quantity {
+  max-width: 50px;
+}
+
+.remove-container {
+  justify-self: start;
+}
+
+.remove {
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  border: #212227 solid 1px;
+  font-weight: 500;
+  background-color: #fff;
+  color: #212227;
+  transition: all 0.2s ease-in-out;
+}
+
+.remove:hover {
+  background-color: #212227;
+  color: #fff;
+}
