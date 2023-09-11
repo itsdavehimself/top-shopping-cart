@@ -22,6 +22,7 @@ export default function ShoppingPage() {
   const changeFilter = (event) => {
     const filter = event.target.getAttribute('data-filter');
     setFilter(filter);
+    setPage(1);
   };
 
   useEffect(() => {
