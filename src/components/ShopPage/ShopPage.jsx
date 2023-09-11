@@ -11,10 +11,15 @@ export default function ShoppingPage() {
   const [filter, setFilter] = useState(
     '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)',
   );
+  const [sort, setSort] = useState('');
 
   const { data, loading, error } = FetchAPI(
-    `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=bestSellingRank.dsc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
+    `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=${sort}&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
   );
+
+  const handleSortChange = (e) => {
+    setSort(e.target.value);
+  };
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -53,50 +58,65 @@ export default function ShoppingPage() {
       <div className={styles.banner}>GAME SHOP</div>
       <div className={styles.shop}>
         <div className={styles.categories}>
-          <h3 className={styles['category-title']}>Categories</h3>
-          <div className={styles['category-links']}>
-            <button
-              className={styles['category-btn']}
-              data-filter="(search=Gaming&search=Desktops)"
-              onClick={changeFilter}
-            >
-              Gaming Desktops
-            </button>
-            <button
-              className={styles['category-btn']}
-              data-filter="(search=Gaming&search=Monitors)"
-              onClick={changeFilter}
-            >
-              Gaming Monitors
-            </button>
-            <button
-              className={styles['category-btn']}
-              data-filter="(search=Gaming&search=Laptops)"
-              onClick={changeFilter}
-            >
-              Gaming Laptops
-            </button>
-            <button
-              className={styles['category-btn']}
-              data-filter="(search=Graphic&search=Cards)"
-              onClick={changeFilter}
-            >
-              Graphic Cards
-            </button>
-            {filter !==
-              '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)' && (
+          <div className={styles['sticky-div']}>
+            <h3 className={styles['category-title']}>Categories</h3>
+            <div className={styles['category-links']}>
               <button
-                className={styles['clear-filter-btn']}
-                data-filter="(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)"
+                className={styles['category-btn']}
+                data-filter="(search=Gaming&search=Desktops)"
                 onClick={changeFilter}
               >
-                X Clear Filter
+                Gaming Desktops
               </button>
-            )}
+              <button
+                className={styles['category-btn']}
+                data-filter="(search=Gaming&search=Monitors)"
+                onClick={changeFilter}
+              >
+                Gaming Monitors
+              </button>
+              <button
+                className={styles['category-btn']}
+                data-filter="(search=Gaming&search=Laptops)"
+                onClick={changeFilter}
+              >
+                Gaming Laptops
+              </button>
+              <button
+                className={styles['category-btn']}
+                data-filter="(search=Graphic&search=Cards)"
+                onClick={changeFilter}
+              >
+                Graphic Cards
+              </button>
+              {filter !==
+                '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)' && (
+                <button
+                  className={styles['clear-filter-btn']}
+                  data-filter="(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)"
+                  onClick={changeFilter}
+                >
+                  X Clear Filter
+                </button>
+              )}
+            </div>
           </div>
         </div>
         <div className={styles.products}>
-          <div className={styles.total}>{data.total} items</div>
+          <div className={styles['catalog-header']}>
+            <div className={styles.total}>{data.total} items</div>
+            <div>
+              Sort by:{' '}
+              <select value={sort} onChange={handleSortChange}>
+                <option value="bestSellingRank.dsc">Popularity</option>
+                <option value="regularPrice.asc">Price low to high</option>
+                <option value="regularPrice.dsc">Price high to low</option>
+                <option value="name.asc">A - Z</option>
+                <option value="name.dsc">Z - A</option>
+              </select>
+            </div>
+          </div>
+
           <div className={styles.catalog}>
             {data.products.map((product) => (
               <ItemCard

@@ -2,6 +2,18 @@ html {
   scroll-behavior: smooth;
 }
 
+select {
+  font-size: 1rem;
+  padding: 4px;
+  border-radius: 6px;
+  border-color: #cacaca;
+  transition: all 0.4 ease-in-out;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
 .banner {
   display: flex;
   flex-direction: column;
@@ -38,6 +50,12 @@ html {
   flex: 0.5;
   border-right: solid #cacaca 1px;
   padding-right: 12px;
+}
+
+.sticky-div {
+  position: sticky;
+  top: 20px;
+  z-index: 1;
 }
 
 .category-title {
@@ -91,6 +109,13 @@ html {
   display: flex;
   flex-direction: column;
   padding-left: 50px;
+}
+
+.catalog-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .catalog {
