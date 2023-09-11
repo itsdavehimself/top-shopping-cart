@@ -3,11 +3,24 @@ import LoadingPage from '../Loading/Loading';
 import ItemCard from './ItemCards';
 import FetchAPI from '../API/FetchAPI';
 import ErrorPage from '../ErrorPage/ErrorPage';
-
+import { useState, useEffect } from 'react';
+import Pagination from '../Pagination/Pagination';
 export default function ShoppingPage() {
+  const [page, setPage] = useState(1);
   const { data, loading, error } = FetchAPI(
-    'https://api.bestbuy.com/v1/products((search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=bestSellingRank.dsc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=24&format=json',
+    `https://api.bestbuy.com/v1/products((search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card))?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=bestSellingRank.dsc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=24&page=${page}&format=json`,
   );
+
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [page]);
 
   if (loading) {
     return (
@@ -50,6 +63,13 @@ export default function ShoppingPage() {
                 price={product.regularPrice}
               />
             ))}
+          </div>
+          <div className={styles['page-component']}>
+            <Pagination
+              currentPage={page}
+              totalPages={Math.ceil(data.total / 24)}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>

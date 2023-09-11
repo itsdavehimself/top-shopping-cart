@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .banner {
   display: flex;
   flex-direction: column;
@@ -68,4 +72,11 @@
   justify-content: center;
   grid-template-columns: repeat(3, auto);
   gap: 24px;
+}
+
+.page-component {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  margin: 24px 0 24px 0;
 }

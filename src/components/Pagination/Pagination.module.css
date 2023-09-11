@@ -1,0 +1,38 @@
+button:hover {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.ellipsis {
+  display: flex;
+  align-self: center;
+}
+
+.page-btn {
+  border: none;
+  background-color: #fff;
+  font-size: 1.1rem;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.active {
+  background-color: #8067ca;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+}
+
+.page-btn:hover {
+  background-color: #e6e6e6;
+}
