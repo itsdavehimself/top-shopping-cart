@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import styles from './Pagination.module.css';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const minPage = Math.max(1, currentPage - 1);
-  const maxPage = Math.min(totalPages, currentPage + 1);
+  const minPage = Math.max(1, currentPage - 2);
+  const maxPage = Math.min(totalPages, currentPage + 2);
 
   const pages = Array.from(
     { length: maxPage - minPage + 1 },

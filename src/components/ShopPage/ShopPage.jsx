@@ -11,6 +11,7 @@ export default function ShoppingPage() {
   const [filter, setFilter] = useState(
     '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)',
   );
+
   const { data, loading, error } = FetchAPI(
     `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=bestSellingRank.dsc&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
   );
