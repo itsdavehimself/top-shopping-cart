@@ -28,10 +28,20 @@ export default function Footer() {
           <div className={styles.link}>
             <Link to="/home">Home</Link>
             <Link to="/shop">Shop</Link>
-            <a href="https://github.com/itsdavehimself/top-shopping-cart">
+            <a
+              href="https://github.com/itsdavehimself/top-shopping-cart"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Project Repository
             </a>
-            <a href="https://github.com/itsdavehimself">David&apos;s Github</a>
+            <a
+              href="https://github.com/itsdavehimself"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              David&apos;s Github
+            </a>
           </div>
         </div>
       </div>
