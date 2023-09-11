@@ -9,6 +9,8 @@ export default function Navbar() {
   useEffect(() => {
     const navbar = document.querySelector(`.${styles.navbar}`);
     const btns = document.querySelectorAll(`.${styles.btn}`);
+    const logo = document.querySelector(`.${styles.logo}`);
+
     let lastScrollY = window.scrollY;
 
     function handleScroll() {
@@ -28,6 +30,7 @@ export default function Navbar() {
           btns.forEach((btn) => {
             btn.style.color = '#212227';
           });
+          logo.style.color = '#212227';
         }
       } else if (currentScrollY >= 1 && currentScrollY < 299) {
         navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
@@ -37,6 +40,7 @@ export default function Navbar() {
           btns.forEach((btn) => {
             btn.style.color = '#fff';
           });
+          logo.style.color = '#fff';
         }
       } else {
         navbar.style.backgroundColor = 'transparent';
