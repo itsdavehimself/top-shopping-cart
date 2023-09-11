@@ -46,18 +46,45 @@ html {
 
 .category-links {
   color: #727272;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.category-links > p {
-  font-weight: 500;
+.category-btn {
+  font-weight: 600;
+  font-size: 1rem;
   padding: 8px;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: none;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+  color: #727272;
 }
 
-.category-links > p:hover {
+.category-btn:hover {
   cursor: pointer;
   background-color: #dadada;
   color: #212227;
+}
+
+.clear-filter-btn {
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 4px;
+  border-radius: 6px;
+  border: #ff7979 solid 1px;
+  background-color: #fff;
+  transition: background-color 0.2s ease-in-out;
+  color: #ff7979;
+  margin-top: 24px;
+  align-self: center;
+}
+.clear-filter-btn:hover {
+  cursor: pointer;
+  background-color: #ff7979;
+  color: #fff;
+  border: #ff7979 solid 1px;
 }
 
 .products {
