@@ -1,16 +1,17 @@
 import styles from './CartItem.module.css';
+import PropTypes from 'prop-types';
 
-export default function CartItem() {
+export default function CartItem({ product, price, image }) {
   return (
     <div className={styles['item-card']}>
       <div className={styles['image-container']}>
-        <div className={styles.image}></div>
+        <div className={styles.image}>
+          <img src={image}></img>
+        </div>
       </div>
       <div className={styles['item-info']}>
-        <div className={styles['item-price']}>$1299.99</div>
-        <div className={styles['item-name']}>
-          Product name goes here in this spot
-        </div>
+        <div className={styles['item-price']}>${price}</div>
+        <div className={styles['item-name']}>{product}</div>
         <div className={styles['quantity-container']}>
           Quantity:{' '}
           <select className={styles['item-quantity']}>
@@ -28,3 +29,9 @@ export default function CartItem() {
     </div>
   );
 }
+
+CartItem.propTypes = {
+  product: PropTypes.string,
+  price: PropTypes.string,
+  image: PropTypes.string,
+};

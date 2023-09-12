@@ -5,8 +5,10 @@ import FetchAPI from '../API/FetchAPI';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
+import { useOutletContext } from 'react-router-dom';
 
 export default function ShoppingPage() {
+  const [addToCart] = useOutletContext();
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState(
     '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)',
@@ -126,6 +128,8 @@ export default function ShoppingPage() {
                 ratingAvg={product.customerReviewAverage}
                 ratingCount={product.customerReviewCount}
                 price={product.regularPrice}
+                sku={product.sku}
+                addToCart={addToCart}
               />
             ))}
           </div>

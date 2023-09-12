@@ -1,14 +1,25 @@
 import styles from './Cart.module.css';
 import CartItem from './CartItem';
+import { useOutletContext } from 'react-router-dom';
 
 export default function Cart() {
+  const [addToCart, cart] = useOutletContext();
   return (
     <div className={styles['cart-container']}>
       <div className={styles.cart}>
         <h2 className={styles['cart-title']}>Your loot</h2>
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {cart.length > 0 ? (
+          cart.map((cartItem) => (
+            <CartItem
+              key={cartItem.sku}
+              product={cartItem.product}
+              price={cartItem.price}
+              image={cartItem.image}
+            />
+          ))
+        ) : (
+          <div>You have no items in your cart.</div>
+        )}
       </div>
       <div className={styles['total-container']}>
         <h2 className={styles['cart-title']}>Loot totals</h2>

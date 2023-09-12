@@ -1,13 +1,27 @@
 import styles from './ItemCards.module.css';
 import PropTypes from 'prop-types';
+import { useOutletContext } from 'react-router-dom';
 
 export default function ItemCard({
   image,
-  product = 'Placeholder Product Title For Development Purposes',
-  ratingAvg = '5.0',
-  ratingCount = '(2352)',
-  price = '159.99',
+  product,
+  ratingAvg,
+  ratingCount,
+  price,
+  sku,
 }) {
+  const [addToCart] = useOutletContext();
+
+  const addItemToCart = () => {
+    const itemValues = {
+      image,
+      product,
+      price,
+      sku,
+    };
+    addToCart(itemValues);
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.img}>
@@ -19,7 +33,9 @@ export default function ItemCard({
           User Rating: {ratingAvg} ({ratingCount})
         </div>
         <p className={styles.price}>${price}</p>
-        <button className={styles.btn}>ADD TO CART</button>
+        <button className={styles.btn} onClick={addItemToCart}>
+          ADD TO CART
+        </button>
       </div>
     </div>
   );
@@ -31,4 +47,5 @@ ItemCard.propTypes = {
   ratingAvg: PropTypes.number,
   ratingCount: PropTypes.number,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  sku: PropTypes.number,
 };
