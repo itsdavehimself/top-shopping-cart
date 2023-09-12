@@ -12,9 +12,18 @@
 }
 
 .image {
-  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 175px;
   width: 236.95px;
+  overflow: hidden;
+}
+
+.image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .item-price {
