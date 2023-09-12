@@ -24,11 +24,20 @@ export default function App() {
     }
   };
 
+  const removeFromCart = (sku) => {
+    const index = cart.findIndex((item) => {
+      return item.sku === sku;
+    });
+    const updatedCart = [...cart];
+    updatedCart.splice(index, 1);
+    setCart(updatedCart);
+  };
+
   return (
     <>
       <Navbar />
       <ScrollToTop />
-      <Outlet context={[addToCart, cart]} />
+      <Outlet context={[addToCart, removeFromCart, cart]} />
       <Footer />
     </>
   );

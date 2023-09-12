@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import { useOutletContext } from 'react-router-dom';
 
 export default function Cart() {
-  const [addToCart, cart] = useOutletContext();
+  const [addToCart, removeFromCart, cart] = useOutletContext();
   return (
     <div className={styles['cart-container']}>
       <div className={styles.cart}>
@@ -15,6 +15,7 @@ export default function Cart() {
               product={cartItem.product}
               price={cartItem.price}
               image={cartItem.image}
+              sku={cartItem.sku}
             />
           ))
         ) : (

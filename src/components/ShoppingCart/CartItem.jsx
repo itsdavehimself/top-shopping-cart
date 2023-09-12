@@ -1,7 +1,9 @@
 import styles from './CartItem.module.css';
 import PropTypes from 'prop-types';
+import { useOutletContext } from 'react-router-dom';
 
-export default function CartItem({ product, price, image }) {
+export default function CartItem({ product, price, image, sku }) {
+  const [addToCart, removeFromCart, cart] = useOutletContext();
   return (
     <div className={styles['item-card']}>
       <div className={styles['image-container']}>
@@ -23,7 +25,9 @@ export default function CartItem({ product, price, image }) {
           </select>
         </div>
         <div className={styles['remove-container']}>
-          <button className={styles.remove}>Remove item</button>
+          <button className={styles.remove} onClick={() => removeFromCart(sku)}>
+            Remove item
+          </button>
         </div>
       </div>
     </div>
@@ -32,6 +36,7 @@ export default function CartItem({ product, price, image }) {
 
 CartItem.propTypes = {
   product: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   image: PropTypes.string,
+  sku: PropTypes.number,
 };
