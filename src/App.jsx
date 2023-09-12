@@ -4,6 +4,7 @@ import './App.css';
 import { Outlet } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import { useState } from 'react';
+import '@smastrom/react-rating/style.css';
 
 export default function App() {
   const [cart, setCart] = useState([]);
