@@ -11,7 +11,7 @@ export default function App() {
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.sku === item.sku);
 
-    if (existingItem) {
+    if (existingItem && existingItem.quantity < 5) {
       setCart(
         cart.map((cartItem) =>
           cartItem.sku === item.sku
@@ -19,6 +19,8 @@ export default function App() {
             : cartItem,
         ),
       );
+    } else if (existingItem && existingItem.quantity === 5) {
+      return;
     } else {
       setCart([...cart, { ...item, quantity: 1 }]);
     }
@@ -33,11 +35,19 @@ export default function App() {
     setCart(updatedCart);
   };
 
+  const updateQuantity = (sku, newQuantity) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.sku === sku ? { ...item, quantity: newQuantity } : item,
+      ),
+    );
+  };
+
   return (
     <>
       <Navbar />
       <ScrollToTop />
-      <Outlet context={[addToCart, removeFromCart, cart]} />
+      <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
       <Footer />
     </>
   );
