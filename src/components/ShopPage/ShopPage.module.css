@@ -26,7 +26,7 @@ select:hover {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0)
     ),
-    url('./shop-hero.jpg');
+    url('/shop-hero.jpg');
   background-position: center;
   color: #fff;
   font-size: 3.4rem;
