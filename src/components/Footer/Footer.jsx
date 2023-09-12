@@ -20,8 +20,7 @@ export default function Footer() {
           <p>Gaming desktops</p>
           <p>Gaming monitors</p>
           <p>Gaming laptops</p>
-          <p>PC Parts & Components</p>
-          <p>PC Gaming Accessories</p>
+          <p>Graphic cards</p>
         </div>
         <div className={styles.links}>
           <h3>OTHER LINKS</h3>
