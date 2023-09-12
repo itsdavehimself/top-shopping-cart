@@ -2,10 +2,12 @@ import styles from './Cart.module.css';
 import CartItem from './CartItem';
 import { useOutletContext } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Cart() {
   const [addToCart, removeFromCart, cart] = useOutletContext();
   const [total, setTotal] = useState(0);
+  const [isExploding, setIsExploding] = useState(false);
 
   useEffect(() => {
     const itemTotals = cart.map(
@@ -17,6 +19,13 @@ export default function Cart() {
     );
     setTotal(total.toFixed(2));
   }, [cart]);
+
+  const handleCheckoutClick = () => {
+    setIsExploding(true);
+    setTimeout(() => {
+      setIsExploding(false);
+    }, 2000);
+  };
 
   return (
     <div className={styles['cart-container']}>
@@ -51,7 +60,13 @@ export default function Cart() {
           <div className={styles.total}>${total}</div>
         </div>
         <div className={styles['checkout-btn-container']}>
-          <button className={styles['checkout-btn']}>CHECKOUT</button>
+          <button
+            className={styles['checkout-btn']}
+            onClick={handleCheckoutClick}
+          >
+            CHECKOUT
+          </button>
+          {isExploding && <ConfettiExplosion />}
         </div>
       </div>
     </div>
