@@ -28,7 +28,7 @@ export default function ItemCard({
 ItemCard.propTypes = {
   image: PropTypes.string.isRequired,
   product: PropTypes.string.isRequired,
-  ratingAvg: PropTypes.string.isRequired,
-  ratingCount: PropTypes.string.isRequired,
+  ratingAvg: PropTypes.number,
+  ratingCount: PropTypes.number,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };

@@ -41,8 +41,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 };
 
 Pagination.propTypes = {
-  currentPage: PropTypes.string,
-  totalPages: PropTypes.string,
+  currentPage: PropTypes.number,
+  totalPages: PropTypes.number,
   onPageChange: PropTypes.func,
 };
 
