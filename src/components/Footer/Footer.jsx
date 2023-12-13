@@ -13,70 +13,74 @@ export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.top}>
-        <div className={styles.about}>
-          <h3>ABOUT THE PROJECT</h3>
-          <p>
-            This project was made as part of The Odin Project&apos;s JavaScript
-            curriculum. The purpose of this shopping cart project is to explore
-            and utilize ReactJS, React testing, and React routing in conjunction
-            with CSS modules. The site is made fully responsive to work and look
-            good both on mobile and desktop.
-          </p>
+        <div className={styles['about-container']}>
+          <div className={styles.about}>
+            <h3>ABOUT THE PROJECT</h3>
+            <p>
+              This project was made as part of The Odin Project&apos;s
+              JavaScript curriculum. The purpose of this shopping cart project
+              is to explore and utilize ReactJS, React testing, and React
+              routing in conjunction with CSS modules. The site is made fully
+              responsive to work and look good both on mobile and desktop.
+            </p>
+          </div>
         </div>
-        <div className={styles.shop}>
-          <h3>SHOP</h3>
-          <Link
-            className={styles.link}
-            to="/shop"
-            data-filter="(search=Gaming&search=Desktops)"
-            onClick={handleLinkClick}
-          >
-            Gaming Desktops
-          </Link>
-          <Link
-            className={styles.link}
-            to="/shop"
-            data-filter="(search=Gaming&search=Monitors)"
-            onClick={handleLinkClick}
-          >
-            Gaming Monitors
-          </Link>
-          <Link
-            className={styles.link}
-            to="/shop"
-            data-filter="(search=Gaming&search=Laptops)"
-            onClick={handleLinkClick}
-          >
-            Gaming Laptops
-          </Link>
-          <Link
-            className={styles.link}
-            to="/shop"
-            data-filter="(search=Graphic&search=Cards)"
-            onClick={handleLinkClick}
-          >
-            Graphic Cards
-          </Link>
-        </div>
-        <div className={styles.links}>
-          <h3>OTHER LINKS</h3>
-          <div className={styles.link}>
-            <Link to="/home">Home</Link>
-            <Link to="/shop">Shop</Link>
-            <a
-              href="https://github.com/itsdavehimself/top-shopping-cart"
-              target="_blank"
-              rel="noopener noreferrer"
+        <div className={styles['link-container']}>
+          <div className={styles.shop}>
+            <h3>SHOP</h3>
+            <Link
+              className={styles.link}
+              to="/shop"
+              data-filter="(search=Gaming&search=Desktops)"
+              onClick={handleLinkClick}
             >
-              Project Repository
-            </a>
-            <a
-              href="https://github.com/itsdavehimself"
-              target="_blank"
-              rel="noopener noreferrer"
+              Gaming Desktops
+            </Link>
+            <Link
+              className={styles.link}
+              to="/shop"
+              data-filter="(search=Gaming&search=Monitors)"
+              onClick={handleLinkClick}
             >
-              David&apos;s Github
-            </a>
+              Gaming Monitors
+            </Link>
+            <Link
+              className={styles.link}
+              to="/shop"
+              data-filter="(search=Gaming&search=Laptops)"
+              onClick={handleLinkClick}
+            >
+              Gaming Laptops
+            </Link>
+            <Link
+              className={styles.link}
+              to="/shop"
+              data-filter="(search=Graphic&search=Cards)"
+              onClick={handleLinkClick}
+            >
+              Graphic Cards
+            </Link>
+          </div>
+          <div className={styles.links}>
+            <h3>OTHER LINKS</h3>
+            <div className={styles.link}>
+              <Link to="/home">Home</Link>
+              <Link to="/shop">Shop</Link>
+              <a
+                href="https://github.com/itsdavehimself/top-shopping-cart"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Project Repository
+              </a>
+              <a
+                href="https://github.com/itsdavehimself"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                David&apos;s Github
+              </a>
+            </div>
           </div>
         </div>
       </div>
