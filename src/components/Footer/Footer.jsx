@@ -31,7 +31,7 @@ export default function Footer() {
             data-filter="(search=Gaming&search=Desktops)"
             onClick={handleLinkClick}
           >
-            Gaming desktops
+            Gaming Desktops
           </Link>
           <Link
             className={styles.link}
@@ -39,7 +39,7 @@ export default function Footer() {
             data-filter="(search=Gaming&search=Monitors)"
             onClick={handleLinkClick}
           >
-            Gaming monitors
+            Gaming Monitors
           </Link>
           <Link
             className={styles.link}
@@ -47,7 +47,7 @@ export default function Footer() {
             data-filter="(search=Gaming&search=Laptops)"
             onClick={handleLinkClick}
           >
-            Gaming laptops
+            Gaming Laptops
           </Link>
           <Link
             className={styles.link}
@@ -55,7 +55,7 @@ export default function Footer() {
             data-filter="(search=Graphic&search=Cards)"
             onClick={handleLinkClick}
           >
-            Graphic cards
+            Graphic Cards
           </Link>
         </div>
         <div className={styles.links}>
