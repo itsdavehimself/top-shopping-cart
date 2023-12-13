@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,4 +44,50 @@
 .btn:hover {
   cursor: pointer;
   color: rgb(167, 167, 167);
+}
+
+.hamburger-btn {
+  background-color: transparent;
+  border-style: none;
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  margin-right: 3%;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-btns {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-btns {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .nav-btns {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .hamburger-btn {
+    display: none;
+  }
 }
