@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Navbar({ cart }) {
@@ -8,10 +8,14 @@ export default function Navbar({ cart }) {
   const isShopPage = location.pathname === '/shop';
   const [cartQuantity, setCartQuantity] = useState(0);
 
+  const navbarRef = useRef(null);
+  const btnsRef = useRef([]);
+  const logoRef = useRef(null);
+
   useEffect(() => {
-    const navbar = document.querySelector(`.${styles.navbar}`);
-    const btns = document.querySelectorAll(`.${styles.btn}`);
-    const logo = document.querySelector(`.${styles.logo}`);
+    const navbar = navbarRef.current;
+    const btns = btnsRef.current;
+    const logo = logoRef.current;
 
     const calculateQuantity = () => {
       const totalQuantity = cart.reduce(
@@ -76,8 +80,8 @@ export default function Navbar({ cart }) {
   }, [location, isShopPage, cart]);
 
   useEffect(() => {
-    const btns = document.querySelectorAll(`.${styles.btn}`);
-    const logo = document.querySelector(`.${styles.logo}`);
+    const btns = btnsRef.current;
+    const logo = logoRef.current;
 
     if (isShopPage) {
       btns.forEach((btn) => {
@@ -92,22 +96,39 @@ export default function Navbar({ cart }) {
     }
   }, [isShopPage]);
   return (
-    <header className={styles.navbar}>
+    <nav className={styles.navbar} ref={navbarRef}>
       <Link to="/home">
-        <div className={styles.logo}>1337MARKET</div>
+        <div className={styles.logo} ref={logoRef}>
+          1337MARKET
+        </div>
       </Link>
       <div className={styles['nav-btns']}>
         <Link to="home">
-          <button className={styles.btn}>Home</button>
+          <button
+            className={styles.btn}
+            ref={(el) => (btnsRef.current = [...btnsRef.current, el])}
+          >
+            Home
+          </button>
         </Link>
         <Link to="shop">
-          <button className={styles.btn}>Shop</button>
+          <button
+            className={styles.btn}
+            ref={(el) => (btnsRef.current = [...btnsRef.current, el])}
+          >
+            Shop
+          </button>
         </Link>
         <Link to="cart">
-          <button className={styles.btn}>Cart ({cartQuantity})</button>
+          <button
+            className={styles.btn}
+            ref={(el) => (btnsRef.current = [...btnsRef.current, el])}
+          >
+            Cart ({cartQuantity})
+          </button>
         </Link>
       </div>
-    </header>
+    </nav>
   );
 }
 
