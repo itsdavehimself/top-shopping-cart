@@ -17,6 +17,7 @@ export default function ItemCard({
   ratingCount,
   price,
   sku,
+  setIsAddedNotificationVisible,
 }) {
   const [addToCart] = useOutletContext();
   const [rating, setRating] = useState(ratingAvg);
@@ -28,7 +29,13 @@ export default function ItemCard({
       price,
       sku,
     };
+
     addToCart(itemValues);
+    setIsAddedNotificationVisible(true);
+
+    setTimeout(() => {
+      setIsAddedNotificationVisible(false);
+    }, 4000);
   };
 
   return (
@@ -64,4 +71,6 @@ ItemCard.propTypes = {
   ratingCount: PropTypes.number,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   sku: PropTypes.number,
+  isAddedNotificationVisible: PropTypes.bool,
+  setIsAddedNotificationVisible: PropTypes.func,
 };

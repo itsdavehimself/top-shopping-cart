@@ -6,6 +6,7 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 import { useOutletContext } from 'react-router-dom';
+import ItemAddedNotification from '../ItemAddedNotification/ItemAddedNotification';
 
 export default function ShoppingPage() {
   const [addToCart] = useOutletContext();
@@ -18,6 +19,9 @@ export default function ShoppingPage() {
   const { data, loading, error } = FetchAPI(
     `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=${sort}&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
   );
+
+  const [isAddedNotificationVisible, setIsAddedNotificationVisible] =
+    useState(false);
 
   const handleSortChange = (e) => {
     setSort(e.target.value);
@@ -58,6 +62,7 @@ export default function ShoppingPage() {
   return (
     <>
       <div className={styles.banner}>GAME SHOP</div>
+      {isAddedNotificationVisible && <ItemAddedNotification />}
       <div className={styles.shop}>
         <div className={styles.categories}>
           <div className={styles['sticky-div']}>
@@ -130,6 +135,7 @@ export default function ShoppingPage() {
                 price={product.regularPrice}
                 sku={product.sku}
                 addToCart={addToCart}
+                setIsAddedNotificationVisible={setIsAddedNotificationVisible}
               />
             ))}
           </div>
