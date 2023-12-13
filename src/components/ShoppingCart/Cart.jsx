@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Cart() {
-  const [cart] = useOutletContext();
+  const [addToCart, removeFromCart, cart] = useOutletContext();
   const [total, setTotal] = useState(0);
   const [isExploding, setIsExploding] = useState(false);
 
