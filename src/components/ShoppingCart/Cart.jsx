@@ -66,7 +66,9 @@ export default function Cart() {
           >
             CHECKOUT
           </button>
-          {isExploding && <ConfettiExplosion />}
+          <div className={styles['confetti-container']}>
+            {isExploding && <ConfettiExplosion />}
+          </div>
         </div>
       </div>
     </div>

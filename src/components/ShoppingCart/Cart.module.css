@@ -80,3 +80,7 @@
   align-items: center;
   margin: 12px 0px;
 }
+
+.confetti-container {
+  position: absolute;
+}
