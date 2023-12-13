@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
+import { UseShopFilterContext } from '../../hooks/UseShopFilterContext';
 
 export default function Footer() {
+  const { dispatch } = UseShopFilterContext();
+
+  const handleLinkClick = (e) => {
+    const newFilter = e.target.getAttribute('data-filter');
+    dispatch({ type: 'SET_FILTER', payload: newFilter });
+  };
+
   return (
     <div className={styles.footer}>
       <div className={styles.top}>
@@ -17,16 +25,36 @@ export default function Footer() {
         </div>
         <div className={styles.shop}>
           <h3>SHOP</h3>
-          <Link className={styles.link} to="/shop">
+          <Link
+            className={styles.link}
+            to="/shop"
+            data-filter="(search=Gaming&search=Desktops)"
+            onClick={handleLinkClick}
+          >
             Gaming desktops
           </Link>
-          <Link className={styles.link} to="/shop">
+          <Link
+            className={styles.link}
+            to="/shop"
+            data-filter="(search=Gaming&search=Monitors)"
+            onClick={handleLinkClick}
+          >
             Gaming monitors
           </Link>
-          <Link className={styles.link} to="/shop">
+          <Link
+            className={styles.link}
+            to="/shop"
+            data-filter="(search=Gaming&search=Laptops)"
+            onClick={handleLinkClick}
+          >
             Gaming laptops
           </Link>
-          <Link className={styles.link} to="/shop">
+          <Link
+            className={styles.link}
+            to="/shop"
+            data-filter="(search=Graphic&search=Cards)"
+            onClick={handleLinkClick}
+          >
             Graphic cards
           </Link>
         </div>

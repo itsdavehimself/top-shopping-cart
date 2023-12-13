@@ -8,13 +8,14 @@ import Pagination from '../Pagination/Pagination';
 import { useOutletContext } from 'react-router-dom';
 import ItemAddedNotification from '../ItemAddedNotification/ItemAddedNotification';
 import { motion, AnimatePresence } from 'framer-motion';
+import { UseShopFilterContext } from '../../hooks/UseShopFilterContext';
 
 export default function ShoppingPage() {
   const [addToCart] = useOutletContext();
   const [page, setPage] = useState(1);
-  const [filter, setFilter] = useState(
-    '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)',
-  );
+
+  const { filter, dispatch } = UseShopFilterContext();
+
   const [sort, setSort] = useState('');
 
   const { data, loading, error } = FetchAPI(
@@ -32,9 +33,9 @@ export default function ShoppingPage() {
     setPage(newPage);
   };
 
-  const changeFilter = (event) => {
-    const filter = event.target.getAttribute('data-filter');
-    setFilter(filter);
+  const changeFilter = (e) => {
+    const newFilter = e.target.getAttribute('data-filter');
+    dispatch({ type: 'SET_FILTER', payload: newFilter });
     setPage(1);
   };
 

@@ -5,6 +5,7 @@ import { Outlet } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import { useState } from 'react';
 import '@smastrom/react-rating/style.css';
+import { ShopFilterContextProvider } from './context/filterContext';
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -46,10 +47,12 @@ export default function App() {
 
   return (
     <>
-      <Navbar cart={cart} />
-      <ScrollToTop />
-      <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
-      <Footer />
+      <ShopFilterContextProvider>
+        <Navbar cart={cart} />
+        <ScrollToTop />
+        <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
+        <Footer />
+      </ShopFilterContextProvider>
     </>
   );
 }
