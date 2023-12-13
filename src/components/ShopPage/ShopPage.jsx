@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 import { useOutletContext } from 'react-router-dom';
 import ItemAddedNotification from '../ItemAddedNotification/ItemAddedNotification';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ShoppingPage() {
   const [addToCart] = useOutletContext();
@@ -62,7 +63,14 @@ export default function ShoppingPage() {
   return (
     <>
       <div className={styles.banner}>GAME SHOP</div>
-      {isAddedNotificationVisible && <ItemAddedNotification />}
+      <AnimatePresence>
+        {isAddedNotificationVisible && (
+          <motion.div exit={{ opacity: 0 }}>
+            <ItemAddedNotification />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className={styles.shop}>
         <div className={styles.categories}>
           <div className={styles['sticky-div']}>
