@@ -46,7 +46,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar cart={cart} />
       <ScrollToTop />
       <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
       <Footer />

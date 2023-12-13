@@ -1,15 +1,25 @@
 import { Link, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Navbar() {
+export default function Navbar({ cart }) {
   const location = useLocation();
   const isShopPage = location.pathname === '/shop';
+  const [cartQuantity, setCartQuantity] = useState(0);
 
   useEffect(() => {
     const navbar = document.querySelector(`.${styles.navbar}`);
     const btns = document.querySelectorAll(`.${styles.btn}`);
     const logo = document.querySelector(`.${styles.logo}`);
+
+    const calculateQuantity = () => {
+      const totalQuantity = cart.reduce(
+        (total, item) => total + item.quantity,
+        0,
+      );
+      setCartQuantity(totalQuantity);
+    };
 
     let lastScrollY = window.scrollY;
 
@@ -58,10 +68,12 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
 
+    calculateQuantity();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [location, isShopPage]);
+  }, [location, isShopPage, cart]);
 
   useEffect(() => {
     const btns = document.querySelectorAll(`.${styles.btn}`);
@@ -92,9 +104,13 @@ export default function Navbar() {
           <button className={styles.btn}>Shop</button>
         </Link>
         <Link to="cart">
-          <button className={styles.btn}>Cart</button>
+          <button className={styles.btn}>Cart ({cartQuantity})</button>
         </Link>
       </div>
     </header>
   );
 }
+
+Navbar.propTypes = {
+  cart: PropTypes.array,
+};
