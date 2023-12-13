@@ -17,10 +17,18 @@ export default function Footer() {
         </div>
         <div className={styles.shop}>
           <h3>SHOP</h3>
-          <p>Gaming desktops</p>
-          <p>Gaming monitors</p>
-          <p>Gaming laptops</p>
-          <p>Graphic cards</p>
+          <Link className={styles.link} to="/shop">
+            Gaming desktops
+          </Link>
+          <Link className={styles.link} to="/shop">
+            Gaming monitors
+          </Link>
+          <Link className={styles.link} to="/shop">
+            Gaming laptops
+          </Link>
+          <Link className={styles.link} to="/shop">
+            Graphic cards
+          </Link>
         </div>
         <div className={styles.links}>
           <h3>OTHER LINKS</h3>
