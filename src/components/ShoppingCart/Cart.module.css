@@ -1,15 +1,23 @@
+.cart-component {
+  display: flex;
+  justify-content: center;
+}
+
 .cart-container {
   display: grid;
-  min-height: 100vh;
   grid-template-columns: 1fr 0.5fr;
   justify-content: center;
-  margin: 6% 15% 0% 15%;
+  min-height: 100vh;
   color: #212227;
+  padding: 8rem 14rem;
+  min-width: 86rem;
+  column-gap: 4rem;
 }
 
 .cart {
   display: flex;
   flex-direction: column;
+  max-width: 60rem;
 }
 
 .cart-title {
@@ -20,7 +28,7 @@
 .total-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .sub-total-container {
@@ -83,4 +91,67 @@
 
 .confetti-container {
   position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+  .cart-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin: 0 1.5rem;
+    padding: 4rem 0;
+    gap: 2rem;
+  }
+
+  .cart {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .cart-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin: 0 3rem;
+    padding: 6rem 0;
+    gap: 5rem;
+  }
+
+  .total-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6rem;
+  }
+
+  .cart {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .cart-container {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-content: center;
+    min-height: 100vh;
+    color: #212227;
+    padding: 8rem 14rem;
+  }
+
+  .cart {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    margin-left: -10rem;
+  }
+
+  .total-container {
+    position: fixed;
+    right: 0;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 6rem;
+  }
 }
