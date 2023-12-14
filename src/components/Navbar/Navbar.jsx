@@ -216,9 +216,9 @@ export default function Navbar({ cart }) {
             ></motion.div>
             <motion.div
               className={styles['side-menu-container']}
-              initial={{ x: -200 }}
+              initial={{ x: -350 }}
               animate={{ x: 0, transition: { duration: 0.2 } }}
-              exit={{ x: -200, transition: { duration: 0.2 } }}
+              exit={{ x: -350, transition: { duration: 0.2 } }}
             >
               <div className={styles['side-menu-close']}>
                 <button
