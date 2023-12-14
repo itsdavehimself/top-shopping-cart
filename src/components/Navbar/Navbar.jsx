@@ -3,7 +3,11 @@ import styles from './Navbar.module.css';
 import { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faCartShopping,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar({ cart }) {
   const location = useLocation();
@@ -11,6 +15,9 @@ export default function Navbar({ cart }) {
   const [cartQuantity, setCartQuantity] = useState(0);
   const hamburgerIcon = <FontAwesomeIcon icon={faBars} />;
   const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
+  const xMark = <FontAwesomeIcon icon={faXmark} />;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navbarRef = useRef(null);
   const homeBtnRef = useRef(null);
@@ -18,6 +25,10 @@ export default function Navbar({ cart }) {
   const cartBtnRef = useRef(null);
   const burgerBtnRef = useRef(null);
   const logoRef = useRef(null);
+
+  const handleMenuClick = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
 
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -143,9 +154,41 @@ export default function Navbar({ cart }) {
           </div>
         </div>
       </div>
-      <button className={styles['hamburger-btn']} ref={burgerBtnRef}>
+      <button
+        className={styles['hamburger-btn']}
+        ref={burgerBtnRef}
+        onClick={handleMenuClick}
+      >
         {hamburgerIcon}
       </button>
+      {isMenuOpen && (
+        <>
+          <div className={styles['blurred-overlay']}></div>
+          <div className={styles['side-menu-container']}>
+            <div className={styles['side-menu-close']}>
+              <button
+                className={styles['close-menu-btn']}
+                onClick={handleMenuClick}
+              >
+                {xMark}
+              </button>
+            </div>
+            <div className={styles['side-menu-nav']}>
+              <Link to="home">
+                <button className={styles.btn}>Home</button>
+              </Link>
+              <Link to="shop">
+                <button className={styles.btn}>Shop</button>
+              </Link>
+              <Link to="cart">
+                <button className={styles.btn}>
+                  Cart {cartQuantity > 0 ? cartQuantity : null}
+                </button>
+              </Link>
+            </div>
+          </div>
+        </>
+      )}
     </nav>
   );
 }
