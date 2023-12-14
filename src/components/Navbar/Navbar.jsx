@@ -137,7 +137,7 @@ export default function Navbar({ cart }) {
             </Link>
             <Link to="cart">
               <button className={styles.btn} ref={cartBtnRef}>
-                Cart ({cartQuantity})
+                {cartIcon} {cartQuantity > 0 ? cartQuantity : null}
               </button>
             </Link>
           </div>
