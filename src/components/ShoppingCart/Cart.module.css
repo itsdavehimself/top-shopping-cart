@@ -5,11 +5,11 @@
 
 .cart-container {
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: minmax(20rem, 50rem) minmax(2rem, 30rem);
   justify-content: center;
   min-height: 100vh;
   color: #212227;
-  padding: 8rem 14rem;
+  padding: 8rem 4rem;
   gap: 6rem;
 }
 
@@ -133,7 +133,7 @@
 @media screen and (min-width: 901px) and (max-width: 1200px) {
   .cart-container {
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    grid-template-columns: 30rem 10rem;
     justify-content: center;
     min-height: 100vh;
     color: #212227;
@@ -141,7 +141,7 @@
   }
 
   .cart {
-    margin-left: -10rem;
+    margin-left: -3rem;
   }
 
   .total-container {
