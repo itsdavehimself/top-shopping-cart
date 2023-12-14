@@ -71,7 +71,7 @@ export default function ItemCard({
           onClick={addItemToCart}
           disabled={isButtonDisabled}
         >
-          {isAddedNotificationVisible ? 'ITEM ADDED TO CART' : 'ADD TO CART'}
+          {isAddedNotificationVisible ? 'ADDED TO CART' : 'ADD TO CART'}
         </button>
       </div>
     </div>
