@@ -87,7 +87,7 @@
   .blurred-overlay {
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(3px);
     position: fixed;
     top: 0;
@@ -119,7 +119,7 @@
   .blurred-overlay {
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(3px);
     position: fixed;
     top: 0;
