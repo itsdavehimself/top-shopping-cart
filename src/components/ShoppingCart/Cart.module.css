@@ -10,8 +10,7 @@
   min-height: 100vh;
   color: #212227;
   padding: 8rem 14rem;
-  min-width: 86rem;
-  column-gap: 4rem;
+  gap: 6rem;
 }
 
 .cart {
@@ -101,6 +100,7 @@
     margin: 0 1.5rem;
     padding: 4rem 0;
     gap: 2rem;
+    width: 100vw;
   }
 
   .cart {
@@ -116,6 +116,7 @@
     margin: 0 3rem;
     padding: 6rem 0;
     gap: 5rem;
+    width: 100vw;
   }
 
   .total-container {
@@ -140,9 +141,6 @@
   }
 
   .cart {
-    display: flex;
-    flex-direction: column;
-    max-width: 60rem;
     margin-left: -10rem;
   }
 
