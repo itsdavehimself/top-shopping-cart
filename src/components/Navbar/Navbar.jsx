@@ -23,6 +23,7 @@ export default function Navbar({ cart }) {
   const homeBtnRef = useRef(null);
   const shopBtnRef = useRef(null);
   const cartBtnRef = useRef(null);
+  const quantityIconRef = useRef(null);
   const burgerBtnRef = useRef(null);
   const logoRef = useRef(null);
 
@@ -35,6 +36,7 @@ export default function Navbar({ cart }) {
     const homeBtn = homeBtnRef.current;
     const shopBtn = shopBtnRef.current;
     const cartBtn = cartBtnRef.current;
+    const quantityIcon = quantityIconRef.current;
     const burgerBtn = burgerBtnRef.current;
     const logo = logoRef.current;
 
@@ -65,6 +67,10 @@ export default function Navbar({ cart }) {
           homeBtn.style.color = '#212227';
           shopBtn.style.color = '#212227';
           cartBtn.style.color = '#212227';
+          if (quantityIcon) {
+            quantityIcon.style.color = '#fff';
+            quantityIcon.style.backgroundColor = '#212227';
+          }
           burgerBtn.style.color = '#212227';
           logo.style.color = '#212227';
         }
@@ -77,6 +83,10 @@ export default function Navbar({ cart }) {
           shopBtn.style.color = '#fff';
           cartBtn.style.color = '#fff';
           burgerBtn.style.color = '#fff';
+          if (quantityIcon) {
+            quantityIcon.style.color = '#212227';
+            quantityIcon.style.backgroundColor = '#fff';
+          }
           logo.style.color = '#fff';
         }
       } else {
@@ -87,6 +97,10 @@ export default function Navbar({ cart }) {
           homeBtn.style.color = '#fff';
           shopBtn.style.color = '#fff';
           cartBtn.style.color = '#fff';
+          if (quantityIcon) {
+            quantityIcon.style.color = '#212227';
+            quantityIcon.style.backgroundColor = '#fff';
+          }
           burgerBtn.style.color = '#fff';
         }
       }
@@ -107,6 +121,7 @@ export default function Navbar({ cart }) {
     const homeBtn = homeBtnRef.current;
     const shopBtn = shopBtnRef.current;
     const cartBtn = cartBtnRef.current;
+    const quantityIcon = quantityIconRef.current;
     const burgerBtn = burgerBtnRef.current;
     const logo = logoRef.current;
 
@@ -114,12 +129,20 @@ export default function Navbar({ cart }) {
       homeBtn.style.color = '#fff';
       shopBtn.style.color = '#fff';
       cartBtn.style.color = '#fff';
+      if (quantityIcon) {
+        quantityIcon.style.color = '#212227';
+        quantityIcon.style.backgroundColor = '#fff';
+      }
       burgerBtn.style.color = '#fff';
       logo.style.color = '#fff';
     } else {
       homeBtn.style.color = '#212227';
       shopBtn.style.color = '#212227';
       cartBtn.style.color = '#212227';
+      if (quantityIcon) {
+        quantityIcon.style.color = '#fff';
+        quantityIcon.style.backgroundColor = '#212227';
+      }
       burgerBtn.style.color = '#212227';
       logo.style.color = '#212227';
     }
@@ -148,7 +171,15 @@ export default function Navbar({ cart }) {
             </Link>
             <Link to="cart">
               <button className={styles.btn} ref={cartBtnRef}>
-                {cartIcon} {cartQuantity > 0 ? cartQuantity : null}
+                {cartQuantity > 0 ? (
+                  <span
+                    className={styles['cart-quantity']}
+                    ref={quantityIconRef}
+                  >
+                    {cartQuantity}
+                  </span>
+                ) : null}
+                {cartIcon}
               </button>
             </Link>
           </div>
@@ -182,7 +213,15 @@ export default function Navbar({ cart }) {
               </Link>
               <Link to="cart">
                 <button className={styles.btn}>
-                  Cart {cartQuantity > 0 ? cartQuantity : null}
+                  {cartQuantity > 0 ? (
+                    <span
+                      className={styles['cart-quantity']}
+                      ref={quantityIconRef}
+                    >
+                      {cartQuantity}
+                    </span>
+                  ) : null}
+                  Cart
                 </button>
               </Link>
             </div>
