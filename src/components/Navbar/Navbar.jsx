@@ -8,7 +8,7 @@ import {
   faCartShopping,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
-import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar({ cart }) {
   const location = useLocation();
@@ -224,13 +224,17 @@ export default function Navbar({ cart }) {
               </div>
               <div className={styles['side-menu-nav']}>
                 <Link to="home">
-                  <button className={styles.btn}>Home</button>
+                  <button className={styles.btn} onClick={handleMenuClick}>
+                    Home
+                  </button>
                 </Link>
                 <Link to="shop">
-                  <button className={styles.btn}>Shop</button>
+                  <button className={styles.btn} onClick={handleMenuClick}>
+                    Shop
+                  </button>
                 </Link>
                 <Link to="cart">
-                  <button className={styles.btn}>
+                  <button className={styles.btn} onClick={handleMenuClick}>
                     {cartQuantity > 0 ? (
                       <span
                         className={styles['cart-quantity']}
