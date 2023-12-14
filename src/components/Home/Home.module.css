@@ -153,6 +153,12 @@ h2 {
     flex-direction: column-reverse;
     margin: 0;
     padding: 0;
+    gap: 6rem;
+
+    img {
+      padding-right: 4rem;
+      height: 30rem;
+    }
   }
 
   .secondary-text {
@@ -163,10 +169,10 @@ h2 {
 
   .about-us-container {
     display: flex;
+    margin-top: 1rem;
   }
 
   .about-paragraph {
-    margin-top: -1rem;
     padding: 0;
   }
 
@@ -179,7 +185,7 @@ h2 {
   }
 
   .hero-img {
-    height: 16rem;
+    height: 20rem;
   }
 }
 
