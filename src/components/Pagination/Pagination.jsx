@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import styles from './Pagination.module.css';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const minPage = Math.max(1, currentPage - 2);
-  const maxPage = Math.min(totalPages, currentPage + 2);
+  const minPage = Math.max(1, currentPage - 1);
+  const maxPage = Math.min(totalPages, currentPage + 1);
 
   const pages = Array.from(
     { length: maxPage - minPage + 1 },
@@ -14,10 +14,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     <div className={styles.pagination}>
       {minPage > 1 && (
         <button className={styles['page-btn']} onClick={() => onPageChange(1)}>
-          1
+          First
         </button>
       )}
-      {minPage > 2 && <span className={styles.ellipsis}>...</span>}
+      {minPage >= 2 && <span className={styles.ellipsis}>...</span>}
       {pages.map((page) => (
         <button
           key={page}
@@ -28,12 +28,12 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         </button>
       ))}
       {maxPage < totalPages - 1 && <span className={styles.ellipsis}>...</span>}
-      {maxPage < totalPages && (
+      {maxPage <= totalPages && (
         <button
           className={styles['page-btn']}
           onClick={() => onPageChange(totalPages)}
         >
-          {totalPages}
+          Last
         </button>
       )}
     </div>

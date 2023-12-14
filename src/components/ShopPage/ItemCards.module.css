@@ -2,18 +2,19 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  height: 392px;
-  max-width: 274px;
-  padding: 28px;
+  height: 26rem;
+  min-width: 12rem;
+  max-width: 16rem;
+  padding: 2rem;
 }
 
 .img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 175px;
+  height: 12rem;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
 }
 
 .img img {
@@ -41,7 +42,7 @@
 }
 
 .price {
-  margin: 5% 0 0 0;
+  margin: 0.5rem 0 0 0;
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -55,12 +56,12 @@
 }
 
 .btn {
-  padding: 12px 12px;
-  margin: 0 20%;
+  padding: 1rem 1rem;
+  margin: 0 2rem;
   border: none;
   background-image: linear-gradient(45deg, #8367c7, #336dff);
   color: #fff;
-  border-radius: 12px;
+  border-radius: 0.5rem;
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0px 0px 0px 0px rgba(131, 103, 199, 0);
@@ -70,4 +71,71 @@
   cursor: pointer;
   color: rgb(249, 246, 255);
   box-shadow: 0px 0px 10px 5px rgba(131, 103, 199, 0.2);
+}
+
+.btn-added {
+  background-image: linear-gradient(45deg, #8367c7, #336dff);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+    max-height: 26rem;
+  }
+
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  .img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    padding: 0 0.5rem;
+  }
+
+  .product-name {
+    max-height: 4rem;
+  }
+
+  .price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 26rem;
+    width: 13rem;
+    padding: 2rem;
+  }
 }

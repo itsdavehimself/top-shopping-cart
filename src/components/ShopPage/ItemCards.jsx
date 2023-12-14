@@ -17,12 +17,18 @@ export default function ItemCard({
   ratingCount,
   price,
   sku,
-  setIsAddedNotificationVisible,
 }) {
   const [addToCart] = useOutletContext();
   const [rating, setRating] = useState(ratingAvg);
+  const [isAddedNotificationVisible, setIsAddedNotificationVisible] =
+    useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const addItemToCart = () => {
+    if (isButtonDisabled) {
+      return;
+    }
+
     const itemValues = {
       image,
       product,
@@ -32,10 +38,12 @@ export default function ItemCard({
 
     addToCart(itemValues);
     setIsAddedNotificationVisible(true);
+    setIsButtonDisabled(true);
 
     setTimeout(() => {
       setIsAddedNotificationVisible(false);
-    }, 4000);
+      setIsButtonDisabled(false);
+    }, 2000);
   };
 
   return (
@@ -56,8 +64,14 @@ export default function ItemCard({
           ({ratingCount || 0})
         </div>
         <p className={styles.price}>${price}</p>
-        <button className={styles.btn} onClick={addItemToCart}>
-          ADD TO CART
+        <button
+          className={`${styles.btn} ${
+            isAddedNotificationVisible ? styles['btn-added'] : ''
+          }`}
+          onClick={addItemToCart}
+          disabled={isButtonDisabled}
+        >
+          {isAddedNotificationVisible ? 'ITEM ADDED TO CART' : 'ADD TO CART'}
         </button>
       </div>
     </div>

@@ -5,7 +5,7 @@ button:hover {
 .pagination {
   display: flex;
   justify-content: space-between;
-  gap: 26px;
+  gap: 1.2rem;
 }
 
 .ellipsis {
@@ -17,8 +17,8 @@ button:hover {
   border: none;
   background-color: #fff;
   font-size: 1.1rem;
-  height: 36px;
-  width: 36px;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
   transition: background-color 0.2s ease-in-out;
 }
@@ -28,8 +28,8 @@ button:hover {
   color: #fff;
   border: none;
   font-size: 1.1rem;
-  height: 36px;
-  width: 36px;
+  height: 2.5rem;
+  width: 2.5rem;
   border-radius: 50%;
 }
 

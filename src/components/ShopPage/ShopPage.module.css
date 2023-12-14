@@ -4,8 +4,8 @@ html {
 
 select {
   font-size: 0.95rem;
-  padding: 4px;
-  border-radius: 6px;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
   border-color: #cacaca;
   transition: all 0.4 ease-in-out;
 }
@@ -19,8 +19,8 @@ select:hover {
   flex-direction: column;
   justify-content: end;
   align-items: flex-start;
-  padding-left: 10%;
-  min-height: 320px;
+  padding-left: 20rem;
+  min-height: 20rem;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.5),
@@ -37,25 +37,31 @@ select:hover {
   display: flex;
   justify-content: center;
   background-color: #ffffff;
-  margin: 0 12%;
+  margin: 0 15rem;
 }
 
 .total {
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 50px 0 36px 0;
+  padding: 4rem 0 2rem 0;
+}
+
+.category-filter-btn {
+  display: none;
 }
 
 .categories {
   flex: 0.5;
   border-right: solid #cacaca 1px;
-  padding-right: 12px;
+  padding-right: 0.5rem;
+  max-width: 20rem;
 }
 
 .sticky-div {
   position: sticky;
-  top: 20px;
+  top: 4rem;
   z-index: 1;
+  min-width: 10rem;
 }
 
 .category-title {
@@ -72,8 +78,8 @@ select:hover {
 .category-btn {
   font-weight: 600;
   font-size: 1rem;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   border: none;
   background-color: #fff;
   transition: background-color 0.2s ease-in-out;
@@ -89,15 +95,16 @@ select:hover {
 .clear-filter-btn {
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 4px;
-  border-radius: 6px;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
   border: #ff7979 solid 1px;
   background-color: #fff;
   transition: background-color 0.2s ease-in-out;
   color: #ff7979;
-  margin-top: 24px;
+  margin-top: 1rem;
   align-self: center;
 }
+
 .clear-filter-btn:hover {
   cursor: pointer;
   background-color: #ff7979;
@@ -108,7 +115,7 @@ select:hover {
 .products {
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
+  padding-left: 3rem;
 }
 
 .catalog-header {
@@ -123,12 +130,342 @@ select:hover {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, auto);
-  gap: 24px;
+  gap: 2rem;
 }
 
 .page-component {
   display: flex;
   align-self: center;
   justify-self: center;
-  margin: 24px 0 24px 0;
+  margin: 2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .categories {
+    display: none;
+  }
+
+  .products {
+    padding: 0;
+  }
+
+  .catalog-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 0 2rem;
+  }
+
+  .total {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  select {
+    font-size: 0.95rem;
+    padding: 0x;
+    border-radius: 6px;
+    border-color: #cacaca;
+    transition: all 0.4 ease-in-out;
+  }
+
+  .category-filter-btn {
+    display: flex;
+    align-self: center;
+    border-style: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: fit-content;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+  }
+
+  .category-filter-btn:hover {
+    cursor: pointer;
+  }
+
+  .category-menu-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #eeeeee;
+    width: 100vw;
+
+    .category-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .category-btn {
+      background-color: transparent;
+    }
+  }
+
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem;
+  }
+
+  .page-component {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .shop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .categories {
+    display: none;
+  }
+
+  .products {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .catalog-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+    padding-top: 2rem;
+  }
+
+  .total {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  select {
+    font-size: 0.95rem;
+    padding: 0x;
+    border-radius: 6px;
+    border-color: #cacaca;
+    transition: all 0.4 ease-in-out;
+  }
+
+  .category-filter-btn {
+    display: flex;
+    align-self: center;
+    border-style: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    width: fit-content;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 0.4rem;
+  }
+
+  .category-filter-btn:hover {
+    cursor: pointer;
+  }
+
+  .category-menu-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #eeeeee;
+    width: 100vw;
+
+    .category-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .category-btn {
+      background-color: transparent;
+    }
+  }
+
+  .catalog {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-component {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  select {
+    font-size: 0.95rem;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    border-color: #cacaca;
+    transition: all 0.4 ease-in-out;
+  }
+
+  select:hover {
+    cursor: pointer;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    padding-left: 1rem;
+    min-height: 20rem;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0)
+      ),
+      url('/shop-hero.jpg');
+    background-position: center;
+    color: #fff;
+    font-size: 3.4rem;
+    font-weight: 800;
+  }
+
+  .shop {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    margin: 0 16rem;
+  }
+
+  .total {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 4rem 0 2rem 0;
+  }
+
+  .category-filter-btn {
+    display: none;
+  }
+
+  .categories {
+    flex: 0.5;
+    border-right: solid #cacaca 1px;
+    padding-right: 0.5rem;
+  }
+
+  .sticky-div {
+    position: sticky;
+    top: 2rem;
+    z-index: 1;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+  }
+
+  .category-links {
+    color: #727272;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-btn {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+    color: #727272;
+  }
+
+  .category-btn:hover {
+    cursor: pointer;
+    background-color: #dadada;
+    color: #212227;
+  }
+
+  .clear-filter-btn {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: #ff7979 solid 1px;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+    color: #ff7979;
+    margin-top: 1rem;
+    align-self: center;
+  }
+
+  .clear-filter-btn:hover {
+    cursor: pointer;
+    background-color: #ff7979;
+    color: #fff;
+    border: #ff7979 solid 1px;
+  }
+
+  .products {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+  }
+
+  .catalog-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .catalog {
+    flex: 1;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+  }
+
+  .page-component {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 2rem 0;
+  }
 }

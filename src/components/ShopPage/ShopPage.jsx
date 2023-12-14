@@ -6,8 +6,6 @@ import ErrorPage from '../ErrorPage/ErrorPage';
 import { useState, useEffect } from 'react';
 import Pagination from '../Pagination/Pagination';
 import { useOutletContext } from 'react-router-dom';
-import ItemAddedNotification from '../ItemAddedNotification/ItemAddedNotification';
-import { motion, AnimatePresence } from 'framer-motion';
 import { UseShopFilterContext } from '../../hooks/UseShopFilterContext';
 
 export default function ShoppingPage() {
@@ -18,12 +16,11 @@ export default function ShoppingPage() {
 
   const [sort, setSort] = useState('');
 
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
   const { data, loading, error } = FetchAPI(
     `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=${sort}&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
   );
-
-  const [isAddedNotificationVisible, setIsAddedNotificationVisible] =
-    useState(false);
 
   const handleSortChange = (e) => {
     setSort(e.target.value);
@@ -37,6 +34,10 @@ export default function ShoppingPage() {
     const newFilter = e.target.getAttribute('data-filter');
     dispatch({ type: 'SET_FILTER', payload: newFilter });
     setPage(1);
+  };
+
+  const handleFilterBtnClick = () => {
+    setIsCategoryOpen((prevIsCategoryOpen) => !prevIsCategoryOpen);
   };
 
   useEffect(() => {
@@ -64,14 +65,6 @@ export default function ShoppingPage() {
   return (
     <>
       <div className={styles.banner}>GAME SHOP</div>
-      <AnimatePresence>
-        {isAddedNotificationVisible && (
-          <motion.div exit={{ opacity: 0 }}>
-            <ItemAddedNotification />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <div className={styles.shop}>
         <div className={styles.categories}>
           <div className={styles['sticky-div']}>
@@ -132,7 +125,58 @@ export default function ShoppingPage() {
               </select>
             </div>
           </div>
-
+          <button
+            className={styles['category-filter-btn']}
+            onClick={handleFilterBtnClick}
+          >
+            {isCategoryOpen
+              ? 'Hide Filter Categories'
+              : 'Show Filter Categories'}
+          </button>
+          {isCategoryOpen && (
+            <div className={styles['category-menu-small']}>
+              <div className={styles['category-links']}>
+                <button
+                  className={styles['category-btn']}
+                  data-filter="(search=Gaming&search=Desktops)"
+                  onClick={changeFilter}
+                >
+                  Gaming Desktops
+                </button>
+                <button
+                  className={styles['category-btn']}
+                  data-filter="(search=Gaming&search=Monitors)"
+                  onClick={changeFilter}
+                >
+                  Gaming Monitors
+                </button>
+                <button
+                  className={styles['category-btn']}
+                  data-filter="(search=Gaming&search=Laptops)"
+                  onClick={changeFilter}
+                >
+                  Gaming Laptops
+                </button>
+                <button
+                  className={styles['category-btn']}
+                  data-filter="(search=Graphic&search=Cards)"
+                  onClick={changeFilter}
+                >
+                  Graphic Cards
+                </button>
+              </div>
+              {filter !==
+                '(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)' && (
+                <button
+                  className={styles['clear-filter-btn']}
+                  data-filter="(search=Gaming&search=Desktops)|(search=Gaming&search=Monitor)|(search=Gaming&search=Laptops)|(search=graphic&search=card)"
+                  onClick={changeFilter}
+                >
+                  X Clear Filter
+                </button>
+              )}
+            </div>
+          )}
           <div className={styles.catalog}>
             {data.products.map((product) => (
               <ItemCard
@@ -144,7 +188,6 @@ export default function ShoppingPage() {
                 price={product.regularPrice}
                 sku={product.sku}
                 addToCart={addToCart}
-                setIsAddedNotificationVisible={setIsAddedNotificationVisible}
               />
             ))}
           </div>
