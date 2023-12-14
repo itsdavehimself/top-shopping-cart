@@ -30,6 +30,7 @@ export default function Navbar({ cart }) {
 
   const handleMenuClick = () => {
     setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'visible';
   };
 
   useEffect(() => {
@@ -148,6 +149,11 @@ export default function Navbar({ cart }) {
       logo.style.color = '#212227';
     }
   }, [isShopPage]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'visible';
+  }, [isMenuOpen]);
+
   return (
     <nav className={styles.navbar} ref={navbarRef}>
       <div className={styles['navbar-container']}>
