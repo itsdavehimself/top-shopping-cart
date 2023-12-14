@@ -115,31 +115,35 @@ export default function Navbar({ cart }) {
   }, [isShopPage]);
   return (
     <nav className={styles.navbar} ref={navbarRef}>
-      <Link to="/home">
-        <div className={styles.logo} ref={logoRef}>
-          1337MARKET
-        </div>
-      </Link>
-      <div className={styles['nav-btns']}>
-        <Link to="home">
-          <button className={styles.btn} ref={homeBtnRef}>
-            Home
-          </button>
-        </Link>
-        <Link to="shop">
-          <button className={styles.btn} ref={shopBtnRef}>
-            Shop
-          </button>
-        </Link>
-        <Link to="cart">
-          <button className={styles.btn} ref={cartBtnRef}>
-            Cart ({cartQuantity})
-          </button>
+      <div className={styles['logo-container']}>
+        <Link to="/home">
+          <div className={styles.logo} ref={logoRef}>
+            1337MARKET
+          </div>
         </Link>
       </div>
-      <button className={styles['hamburger-btn']} ref={burgerBtnRef}>
-        {hamburgerIcon}
-      </button>
+      <div className={styles['btns-container']}>
+        <div className={styles['nav-btns']}>
+          <Link to="home">
+            <button className={styles.btn} ref={homeBtnRef}>
+              Home
+            </button>
+          </Link>
+          <Link to="shop">
+            <button className={styles.btn} ref={shopBtnRef}>
+              Shop
+            </button>
+          </Link>
+          <Link to="cart">
+            <button className={styles.btn} ref={cartBtnRef}>
+              Cart ({cartQuantity})
+            </button>
+          </Link>
+        </div>
+        <button className={styles['hamburger-btn']} ref={burgerBtnRef}>
+          {hamburgerIcon}
+        </button>
+      </div>
     </nav>
   );
 }

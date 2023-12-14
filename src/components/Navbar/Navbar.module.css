@@ -90,4 +90,8 @@
   .hamburger-btn {
     display: none;
   }
+  .navbar {
+    justify-content: center;
+    gap: 60rem;
+  }
 }
