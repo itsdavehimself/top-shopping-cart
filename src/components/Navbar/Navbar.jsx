@@ -8,6 +8,7 @@ import {
   faCartShopping,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence, easeInOut } from 'framer-motion';
 
 export default function Navbar({ cart }) {
   const location = useLocation();
@@ -192,42 +193,60 @@ export default function Navbar({ cart }) {
       >
         {hamburgerIcon}
       </button>
-      {isMenuOpen && (
-        <>
-          <div className={styles['blurred-overlay']}></div>
-          <div className={styles['side-menu-container']}>
-            <div className={styles['side-menu-close']}>
-              <button
-                className={styles['close-menu-btn']}
-                onClick={handleMenuClick}
-              >
-                {xMark}
-              </button>
-            </div>
-            <div className={styles['side-menu-nav']}>
-              <Link to="home">
-                <button className={styles.btn}>Home</button>
-              </Link>
-              <Link to="shop">
-                <button className={styles.btn}>Shop</button>
-              </Link>
-              <Link to="cart">
-                <button className={styles.btn}>
-                  {cartQuantity > 0 ? (
-                    <span
-                      className={styles['cart-quantity']}
-                      ref={quantityIconRef}
-                    >
-                      {cartQuantity}
-                    </span>
-                  ) : null}
-                  Cart
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              className={styles['blurred-overlay']}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.2 },
+              }}
+              exit={{
+                opacity: 0,
+                transition: { duration: 0.2 },
+              }}
+            ></motion.div>
+            <motion.div
+              className={styles['side-menu-container']}
+              initial={{ x: -200 }}
+              animate={{ x: 0, transition: { duration: 0.2 } }}
+              exit={{ x: -200, transition: { duration: 0.2 } }}
+            >
+              <div className={styles['side-menu-close']}>
+                <button
+                  className={styles['close-menu-btn']}
+                  onClick={handleMenuClick}
+                >
+                  {xMark}
                 </button>
-              </Link>
-            </div>
-          </div>
-        </>
-      )}
+              </div>
+              <div className={styles['side-menu-nav']}>
+                <Link to="home">
+                  <button className={styles.btn}>Home</button>
+                </Link>
+                <Link to="shop">
+                  <button className={styles.btn}>Shop</button>
+                </Link>
+                <Link to="cart">
+                  <button className={styles.btn}>
+                    {cartQuantity > 0 ? (
+                      <span
+                        className={styles['cart-quantity']}
+                        ref={quantityIconRef}
+                      >
+                        {cartQuantity}
+                      </span>
+                    ) : null}
+                    Cart
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
