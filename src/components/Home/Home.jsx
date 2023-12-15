@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      moveCarousel(1); // Move the carousel forward
+      moveCarousel(1);
     }, 8000);
 
     return () => clearInterval(interval);
@@ -226,60 +226,19 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className={styles['about-us-container']}>
-        <h2>Changing the face of gaming.</h2>
-        <div className={styles['about-us-text']}>
-          <div className={styles['about-paragraph']}>
-            <p>
-              With a legacy spanning decades, our company is deeply rooted in
-              the ever-evolving world of gaming and technology. From our humble
-              beginnings as passionate gamers, we&apos;ve grown into a leading
-              force within the industry, committed to not just keeping up with
-              the times but shaping them. Our journey in the gaming world has
-              been one of continuous innovation and dedication.
-            </p>
-            <p>
-              Over the years, we&apos;ve not only catered to the gaming
-              community but actively contributed to its growth. Hosting numerous
-              esports tournaments, we&apos;ve witnessed the rise of gaming as a
-              competitive sport. These events haven&apos;t just been about
-              prizes and prestige; they&apos;ve been a platform to give back to
-              the community that has supported us throughout our journey.
-              We&apos;ve consistently dedicated a substantial portion of the
-              tournament winnings to charities focused on empowering
-              underprivileged communities through technology. It&apos;s our way
-              of ensuring that the opportunities we&apos;ve had access to are
-              extended to those who need them most.
-            </p>
-          </div>
-          <div className={styles['about-paragraph']}>
-            <p>
-              Our commitment to the gaming and technology sector goes beyond
-              business; it&apos;s a genuine passion that drives us. We
-              understand that technology has the power to transform lives, and
-              we&apos;re determined to make that transformation accessible to
-              all.
-            </p>
-            <p>
-              Beyond hosting esports tournaments, we&apos;ve actively worked on
-              initiatives to bridge the digital divide, providing technology
-              resources to schools, community centers, and organizations working
-              with underprivileged youth. Our team, composed of industry
-              veterans and dedicated enthusiasts, constantly explores the
-              cutting edge of gaming technology, ensuring that our customers
-              have access to the latest and greatest innovations.
-            </p>
-            <p>
-              We take pride in not just being a retailer, but a partner in your
-              gaming journey. Our commitment to customer satisfaction and
-              technological excellence remains unwavering, as we look forward to
-              many more decades of enriching the gaming and technology
-              landscape. Together, we&apos;re not just keeping up with the
-              future; we&apos;re shaping it.
-            </p>
-          </div>
-        </div>
-      </div> */}
+      <div className={styles['newsletter-container']}>
+        <h3 className={styles['newsletter-title']}>
+          Join us for low ping rates
+        </h3>
+        <p className={styles['newsletter-tagline']}>
+          Never miss an opportunity to level up your gear. Get industry related
+          news and early access to upcoming deals and promotions!
+        </p>
+        <form>
+          <input type="email"></input>
+          <button className={styles['btn-inverse']}>Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 }
