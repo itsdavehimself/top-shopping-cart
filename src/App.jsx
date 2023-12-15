@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import { useState } from 'react';
 import '@smastrom/react-rating/style.css';
-import { ShopFilterContextProvider } from './context/filterContext';
+import { ShopFilterContextProvider } from './context/FilterContext';
 
 export default function App() {
   const [cart, setCart] = useState([]);

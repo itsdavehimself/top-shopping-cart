@@ -1,4 +1,4 @@
-import { ShopFilterContext } from '../context/filterContext';
+import { ShopFilterContext } from '../context/FilterContext';
 import { useContext } from 'react';
 
 export const UseShopFilterContext = () => {
