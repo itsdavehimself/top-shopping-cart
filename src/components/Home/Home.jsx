@@ -174,7 +174,7 @@ export default function Home() {
         </div>
       </div>
       <div className={styles['explore-products-container']}>
-        <h3 className={styles['explore-title']}>EXPORE PRODUCTS</h3>
+        <h3 className={styles['explore-title']}>EXPLORE PRODUCTS</h3>
         <div className={styles['explore-cards']}>
           <div className={styles['explore-card']}>
             <div className={styles['explore-card-img']}>
