@@ -87,8 +87,7 @@ export default function Home() {
                   Unleash unparalleled gaming power with our newest NVIDIA and
                   AMD graphics cards. Elevate your experience to the 4th
                   dimension and conquer virtual realms with breathtaking visuals
-                  and lightning-fast performance. Don&apos;t just play the game;
-                  redefine it with the future of graphics technology!
+                  and lightning-fast performance.
                 </p>
                 <Link to="/shop">
                   <button className={styles['carousel-btn']}>SHOP NOW</button>
