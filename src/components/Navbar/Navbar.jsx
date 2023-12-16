@@ -61,10 +61,6 @@ export default function Navbar({ cart }) {
         navbar.style.transform = 'translateY(0)';
       }
 
-      if (window.scrollY <= 2) {
-        navbar.style.transform = 'translateY(0)';
-      }
-
       if (currentScrollY >= 300) {
         navbar.style.backgroundColor = 'rgba(240, 240, 240, .9)';
         navbar.style.backdropFilter = 'blur(3px)';
