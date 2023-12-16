@@ -16,6 +16,10 @@ h3 {
   margin: 0;
 }
 
+h5 {
+  margin: 0;
+}
+
 p {
   margin: 0;
 }
@@ -422,7 +426,6 @@ p {
   left: 0;
   background-color: rgba(33, 34, 39, 0);
   transition: all 0.4s ease-in-out;
-
   z-index: 1;
 }
 
@@ -433,7 +436,7 @@ p {
   align-items: center;
   row-gap: 2rem;
   width: 100%;
-  height: 20rem;
+  height: 18rem;
   background-image: linear-gradient(45deg, #8367c7, #336dff);
 }
 
@@ -473,6 +476,105 @@ input:focus {
   background-color: #f7f9ff;
   box-shadow: 0px 0px 10px 2px rgba(156, 179, 255, 0.6);
   transition: all 0.3s ease-in-out;
+}
+
+.by-gamers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32rem;
+  width: 100%;
+}
+
+.by-gamers-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-position: 50% 13%;
+  background-size: cover;
+  background-image: url(../../assets/playing-game.jpg);
+  color: #fff;
+}
+
+.by-gamers-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  row-gap: 1.5rem;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    45deg,
+    rgba(30, 24, 45, 0.8),
+    rgba(9, 19, 45, 0.8)
+  );
+  z-index: 1;
+}
+
+.by-gamers-title {
+  font-size: 3rem;
+}
+
+.by-gamers-copy {
+  font-size: 1.2rem;
+  width: 55%;
+  text-align: center;
+}
+
+.why-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 3rem;
+  height: 36rem;
+  width: 100%;
+  color: #212227;
+}
+
+.why-us-title {
+  font-size: 4rem;
+  font-weight: 700;
+  justify-self: center;
+}
+
+.why-us-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.why-us-copy {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #212227;
+  padding-top: 2rem;
+}
+
+.why-us-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 7rem;
+}
+
+.why-us-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+}
+
+.why-us-icon {
+  font-size: 5rem;
 }
 
 .btn {

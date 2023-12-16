@@ -2,7 +2,13 @@ import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRight,
+  faArrowLeft,
+  faTruckFast,
+  faHeadset,
+  faHandshake,
+} from '@fortawesome/free-solid-svg-icons';
 import pcTransparent from '../../assets/pc-transparent.png';
 import gpuTransparent from '../../assets/gpu-transparent.png';
 
@@ -11,6 +17,9 @@ export default function Home() {
   const [currentPosition, setCurrentPosition] = useState(0);
   const arrowRight = <FontAwesomeIcon icon={faArrowRight} />;
   const arrowLeft = <FontAwesomeIcon icon={faArrowLeft} />;
+  const truckIcon = <FontAwesomeIcon icon={faTruckFast} />;
+  const headsetIcon = <FontAwesomeIcon icon={faHeadset} />;
+  const handshakeIcon = <FontAwesomeIcon icon={faHandshake} />;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -79,7 +88,7 @@ export default function Home() {
                 </p>
                 <Link to="/shop">
                   <button className={styles['carousel-btn']}>SHOP NOW</button>
-                </Link>{' '}
+                </Link>
               </div>
             </div>
             <div className={styles['pc-img']}>
@@ -96,7 +105,7 @@ export default function Home() {
                 </p>
                 <Link to="/shop">
                   <button className={styles['carousel-btn']}>SHOP NOW</button>
-                </Link>{' '}
+                </Link>
               </div>
             </div>
           </div>
@@ -238,6 +247,58 @@ export default function Home() {
           <input type="email"></input>
           <button className={styles['btn-inverse']}>Sign Up</button>
         </form>
+      </div>
+      <div className={styles['why-us-container']}>
+        <h3 className={styles['why-us-title']}>Why shop with us?</h3>
+        <div className={styles['why-us-cards']}>
+          <div className={styles['why-us-card']}>
+            <div className={styles['why-us-icon']}>{truckIcon}</div>
+            <h5 className={styles['why-us-subtitle']}>Fast Shipping</h5>
+            <p className={styles['why-us-copy']}>
+              Experience seamless shopping with our company as we prioritize
+              swift and reliable shipping, ensuring your orders are promptly
+              dispatched and delivered to your doorstep with the utmost care and
+              efficiency.
+            </p>
+          </div>
+          <div className={styles['why-us-card']}>
+            <div className={styles['why-us-icon']}>{headsetIcon}</div>
+            <h5 className={styles['why-us-subtitle']}>Reliable Support</h5>
+            <p className={styles['why-us-copy']}>
+              Count on our dedicated and responsive support team to provide
+              reliable assistance, addressing your queries and concerns promptly
+              to enhance your overall shopping experience.
+            </p>
+          </div>
+          <div className={styles['why-us-card']}>
+            <div className={styles['why-us-icon']}>{handshakeIcon}</div>
+            <h5 className={styles['why-us-subtitle']}>Trusted by Many</h5>
+            <p className={styles['why-us-copy']}>
+              Join the ranks of satisfied customers who trust us for their
+              needs, as our commitment to quality, reliability, and exceptional
+              service has earned us the loyalty of many happy patrons.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className={styles['by-gamers-container']}>
+        <div className={styles['by-gamers-img']}>
+          <div className={styles['by-gamers-overlay']}>
+            <h3 className={styles['by-gamers-title']}>BY GAMERS, FOR GAMERS</h3>
+            <p className={styles['by-gamers-copy']}>
+              At 1337MARKET, we take pride in being built by gamers for gamers.
+              Our team is composed of passionate individuals who share a deep
+              love for gaming, and this shared enthusiasm drives our commitment
+              to creating a gaming storefront that truly understands and caters
+              to the needs of fellow gaming enthusiasts. We believe that this
+              shared passion not only fuels our creativity and innovation but
+              also allows us to empathize with the diverse preferences and
+              desires of our gaming community. We are not just a company; we are
+              a community of gamers dedicated to providing a platform where
+              every gamer feels at home.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
