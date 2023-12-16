@@ -639,7 +639,7 @@ input:focus {
   }
 
   .carousel-slide-btn {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
   }
 
   .carousel-titles {
@@ -656,7 +656,8 @@ input:focus {
   .gamer-content,
   .pc-content,
   .graphics-cards-content {
-    width: 70%;
+    width: 100%;
+    margin-left: -1.5rem;
   }
 
   .hero-img-strip {
