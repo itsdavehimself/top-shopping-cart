@@ -1175,4 +1175,107 @@ input:focus {
     background-size: cover;
     padding-left: 4rem;
   }
+
+  .current-promo-container {
+    margin: 2rem;
+  }
+
+  .promo-card-big {
+    height: 30rem;
+  }
+
+  .promo-title {
+    font-size: 2rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .promo-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .promo-tagline {
+    font-size: 1rem;
+    width: 90%;
+    text-align: center;
+  }
+
+  .small-promo-img {
+    height: 10rem;
+  }
+
+  .promo-card-small {
+    column-gap: 2rem;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .explore-products-container {
+    row-gap: 0rem;
+  }
+
+  .explore-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #212227;
+    padding-left: 4rem;
+    margin: 0;
+  }
+
+  .explore-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 90%;
+    padding-top: 3rem;
+    gap: 0;
+  }
+
+  .explore-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    height: fit-content;
+    width: 20rem;
+    background-color: transparent;
+  }
+
+  .explore-card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12rem;
+    width: 12rem;
+    background-color: gray;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 10px rgba(131, 103, 199, 0);
+  }
+
+  #explore-btn {
+    font-size: 0.9rem;
+  }
+
+  .newsletter-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  .newsletter-tagline {
+    width: 70%;
+    text-align: center;
+  }
+
+  .why-us-cards {
+    width: 90%;
+  }
 }
