@@ -228,7 +228,7 @@ export default function Home() {
       </div>
       <div className={styles['newsletter-container']}>
         <h3 className={styles['newsletter-title']}>
-          Join us for low ping rates
+          Subscribe for low ping rates & less lag
         </h3>
         <p className={styles['newsletter-tagline']}>
           Never miss an opportunity to level up your gear. Get industry related
