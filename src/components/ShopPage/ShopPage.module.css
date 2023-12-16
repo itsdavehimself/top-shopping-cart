@@ -55,11 +55,12 @@ select:hover {
   border-right: solid #cacaca 1px;
   padding-right: 0.5rem;
   max-width: 20rem;
+  padding-top: 2rem;
 }
 
 .sticky-div {
   position: sticky;
-  top: 4rem;
+  top: 5rem;
   z-index: 1;
   min-width: 10rem;
 }
