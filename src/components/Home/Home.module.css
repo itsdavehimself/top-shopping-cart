@@ -293,12 +293,12 @@ p {
   column-gap: 4rem;
   height: 25rem;
   background-color: #ededed;
+}
 
-  h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 2rem;
-  }
+.small-promo-title {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
 }
 
 .explore-products-container {
@@ -740,15 +740,16 @@ input:focus {
     row-gap: 2rem;
     height: fit-content;
     padding: 1rem 0;
-    h4 {
-      margin: 0;
-      padding: 0;
-      font-size: 1.5rem;
-    }
+  }
 
-    p {
-      font-size: 0.9rem;
-    }
+  .small-promo-title {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+
+  .small-promo-copy {
+    font-size: 0.9rem;
   }
 
   .explore-products-container {
@@ -996,16 +997,16 @@ input:focus {
     align-items: center;
     justify-content: center;
     row-gap: 2rem;
+  }
 
-    h4 {
-      margin: 0;
-      padding: 0;
-      font-size: 2rem;
-    }
+  .small-promo-title {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+  }
 
-    p {
-      font-size: 1rem;
-    }
+  .small-promo-copy {
+    font-size: 1rem;
   }
 
   .explore-products-container {
@@ -1213,14 +1214,14 @@ input:focus {
 
   .promo-card-small {
     column-gap: 2rem;
+  }
 
-    h4 {
-      font-size: 1.2rem;
-    }
+  .small-promo-title {
+    font-size: 1.2rem;
+  }
 
-    p {
-      font-size: 0.9rem;
-    }
+  .small-promo-copy {
+    font-size: 0.9rem;
   }
 
   .explore-products-container {

@@ -135,8 +135,8 @@ export default function Home() {
               alt="graphics card"
             ></img>
             <div className={styles['small-promo-info']}>
-              <h4>Catch them in 4K</h4>
-              <p>
+              <h4 className={styles['small-promo-title']}>Catch them in 4K</h4>
+              <p className={styles['small-promo-copy']}>
                 Dive into a realm of gaming excellence with our
                 precision-crafted GPUs, engineered to perfection for an
                 unparalleled visual spectacle. Elevate your gaming experience to
