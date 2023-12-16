@@ -662,6 +662,8 @@ input:focus {
   .pc-img {
     width: 86vw;
     background-position: left;
+    align-items: center;
+    padding-top: 1.2rem;
   }
 
   .hero-gamer-overlay,
@@ -918,7 +920,7 @@ input:focus {
   .hero-gamer-img,
   .graphics-cards-img,
   .pc-img {
-    width: 90vw;
+    width: 95vw;
     background-position: left;
   }
 
@@ -1128,4 +1130,49 @@ input:focus {
 }
 
 @media screen and (min-width: 901px) and (max-width: 1200px) {
+  .hero-img-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+    width: 300vw;
+    position: relative;
+    transition: transform 1.2s ease-in-out;
+  }
+
+  .hero-gamer-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    background-image: url('/src/assets/carousel-person-gaming.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 4rem;
+  }
+
+  .graphics-cards-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    background-image: url('/src/assets/carousel-graphics-cards.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 4rem;
+    padding-top: 4rem;
+  }
+
+  .pc-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    background-image: url('/src/assets/carousel-pc-interior.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding-left: 4rem;
+  }
 }
