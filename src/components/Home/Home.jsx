@@ -11,6 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import pcTransparent from '../../assets/pc-transparent.png';
 import gpuTransparent from '../../assets/gpu-transparent.png';
+import { UseShopFilterContext } from '../../hooks/UseShopFilterContext';
 
 export default function Home() {
   const carouselRef = useRef(null);
@@ -20,6 +21,12 @@ export default function Home() {
   const truckIcon = <FontAwesomeIcon icon={faTruckFast} />;
   const headsetIcon = <FontAwesomeIcon icon={faHeadset} />;
   const handshakeIcon = <FontAwesomeIcon icon={faHandshake} />;
+  const { dispatch } = UseShopFilterContext();
+
+  const handleLinkClick = (e) => {
+    const newFilter = e.target.getAttribute('data-filter');
+    dispatch({ type: 'SET_FILTER', payload: newFilter });
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -194,9 +201,15 @@ export default function Home() {
             <div className={styles['explore-card-img']}>
               <div className={styles['explore-pc-img']}>
                 <div className={styles['explore-img-overlay']}>
-                  <button className={styles.btn} id={styles['explore-btn']}>
-                    SHOP DESKTOPS
-                  </button>
+                  <Link to="/shop" onClick={handleLinkClick}>
+                    <button
+                      className={styles.btn}
+                      id={styles['explore-btn']}
+                      data-filter="(search=Gaming&search=Desktops)"
+                    >
+                      SHOP DESKTOPS
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -206,9 +219,15 @@ export default function Home() {
             <div className={styles['explore-card-img']}>
               <div className={styles['explore-laptop-img']}>
                 <div className={styles['explore-img-overlay']}>
-                  <button className={styles.btn} id={styles['explore-btn']}>
-                    SHOP MONITORS
-                  </button>
+                  <Link to="/shop" onClick={handleLinkClick}>
+                    <button
+                      className={styles.btn}
+                      id={styles['explore-btn']}
+                      data-filter="(search=Gaming&search=Monitors)"
+                    >
+                      SHOP MONITORS
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -218,9 +237,15 @@ export default function Home() {
             <div className={styles['explore-card-img']}>
               <div className={styles['explore-monitor-img']}>
                 <div className={styles['explore-img-overlay']}>
-                  <button className={styles.btn} id={styles['explore-btn']}>
-                    SHOP LAPTOPS
-                  </button>
+                  <Link to="/shop" onClick={handleLinkClick}>
+                    <button
+                      className={styles.btn}
+                      id={styles['explore-btn']}
+                      data-filter="(search=Gaming&search=Laptops)"
+                    >
+                      SHOP LAPTOPS
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -230,9 +255,15 @@ export default function Home() {
             <div className={styles['explore-card-img']}>
               <div className={styles['explore-gpu-img']}>
                 <div className={styles['explore-img-overlay']}>
-                  <button className={styles.btn} id={styles['explore-btn']}>
-                    SHOP GPUs
-                  </button>
+                  <Link to="/shop" onClick={handleLinkClick}>
+                    <button
+                      className={styles.btn}
+                      id={styles['explore-btn']}
+                      data-filter="(search=Graphic&search=Cards)"
+                    >
+                      SHOP GPUs
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
