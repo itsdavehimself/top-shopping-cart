@@ -1,5 +1,10 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #212227;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 .bold {
@@ -30,6 +35,7 @@ p {
   justify-content: center;
   align-items: center;
   margin: 0;
+  width: 100%;
 }
 
 .hero-carousel {
@@ -301,6 +307,7 @@ p {
   row-gap: 2rem;
   padding: 3rem 0;
   background-color: #ededed;
+  width: 100%;
 }
 
 .explore-title {
