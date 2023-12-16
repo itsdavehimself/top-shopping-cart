@@ -157,8 +157,10 @@ export default function Home() {
               alt="gaming computer"
             ></img>
             <div className={styles['small-promo-info']}>
-              <h4>Unfathomable Power</h4>
-              <p>
+              <h4 className={styles['small-promo-title']}>
+                Unfathomable Power
+              </h4>
+              <p className={styles['small-promo-copy']}>
                 Unleash the power of ultimate gaming with our meticulously
                 engineered PCs, crafted to perfection for an unparalleled gaming
                 experience. Elevate your gameplay to new heights with
