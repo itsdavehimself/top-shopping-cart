@@ -62,8 +62,8 @@ export default function Navbar({ cart }) {
       }
 
       if (currentScrollY >= 300) {
-        navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
-        navbar.style.backdropFilter = 'blur(1px)';
+        navbar.style.backgroundColor = 'rgba(240, 240, 240, .9)';
+        navbar.style.backdropFilter = 'blur(3px)';
         navbar.style.borderBottom = '#cacaca solid 1px';
         if (isShopPage) {
           homeBtn.style.color = '#212227';
@@ -77,8 +77,8 @@ export default function Navbar({ cart }) {
           logo.style.color = '#212227';
         }
       } else if (currentScrollY >= 1 && currentScrollY < 299) {
-        navbar.style.backgroundColor = 'rgba(240, 240, 240, .2)';
-        navbar.style.backdropFilter = 'blur(1px)';
+        navbar.style.backgroundColor = 'rgba(240, 240, 240, .9)';
+        navbar.style.backdropFilter = 'blur(3px)';
         navbar.style.borderBottom = '#cacaca solid 1px';
         if (isShopPage) {
           homeBtn.style.color = '#fff';
