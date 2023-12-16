@@ -19,7 +19,7 @@ export default function ShoppingPage() {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
   const { data, loading, error } = FetchAPI(
-    `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=${sort}&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=16&page=${page}&format=json`,
+    `https://api.bestbuy.com/v1/products(${filter})?apiKey=qhqws47nyvgze2mq3qx4jadt&sort=${sort}&show=name,customerReviewAverage,customerReviewCount,image,regularPrice,sku&pageSize=15&page=${page}&format=json`,
   );
 
   const handleSortChange = (e) => {
