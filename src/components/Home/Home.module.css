@@ -738,7 +738,8 @@ input:focus {
     align-items: center;
     justify-content: center;
     row-gap: 2rem;
-
+    height: fit-content;
+    padding: 1rem 0;
     h4 {
       margin: 0;
       padding: 0;
