@@ -55,7 +55,7 @@ export default function Navbar({ cart }) {
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY || window.scrollY > 50) {
+      if (currentScrollY > lastScrollY && window.scrollY > 50) {
         navbar.style.transform = 'translateY(-100%)';
       } else {
         navbar.style.transform = 'translateY(0)';
