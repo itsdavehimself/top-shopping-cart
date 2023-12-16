@@ -61,7 +61,7 @@ export default function Navbar({ cart }) {
         navbar.style.transform = 'translateY(0)';
       }
 
-      if (window.scrollY < 0) {
+      if (window.scrollY < 1) {
         navbar.style.transform = 'translateY(0)';
       }
 
