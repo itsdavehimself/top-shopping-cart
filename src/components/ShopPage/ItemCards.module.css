@@ -113,10 +113,6 @@
     padding: 0 0.5rem;
   }
 
-  .product-name {
-    max-height: 4rem;
-  }
-
   .price {
     margin: 0;
     font-weight: 700;
