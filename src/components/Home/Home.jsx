@@ -39,6 +39,10 @@ export default function Home() {
     setCurrentPosition(nextPosition);
   };
 
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.home}>
       <div className={styles['hero-container']}>
@@ -245,7 +249,9 @@ export default function Home() {
         </p>
         <form>
           <input type="email"></input>
-          <button className={styles['btn-inverse']}>Sign Up</button>
+          <button className={styles['btn-inverse']} onClick={handleEmailClick}>
+            Sign Up
+          </button>
         </form>
       </div>
       <div className={styles['why-us-container']}>
