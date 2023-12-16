@@ -240,12 +240,11 @@ export default function Home() {
         </div>
       </div>
       <div className={styles['newsletter-container']}>
-        <h3 className={styles['newsletter-title']}>
-          Subscribe for low ping rates & less lag
-        </h3>
+        <h3 className={styles['newsletter-title']}>Lower your lag</h3>
         <p className={styles['newsletter-tagline']}>
-          Never miss an opportunity to level up your gear. Get industry related
-          news and early access to upcoming deals and promotions!
+          Subscribe to our newsletter and never miss an opportunity to level up
+          your gear. Get industry related news and early access to upcoming
+          deals and promotions!
         </p>
         <form>
           <input type="email"></input>
