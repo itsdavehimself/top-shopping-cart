@@ -10,7 +10,7 @@ The primary goal of this project is to delve into the intricacies of ReactJS, em
 
 - **RESTful API Integration:** This project seamlessly integrates with Best Buy's API to dynamically fetch and display up-to-date product information on the site. Leveraging the principles of REST, it ensures efficient communication between the client and the external data source.
 
--- **Dynamic Shopping Cart:** The shopping cart allows users to effortlessly add up to five units of a product. Experience real-time total updates, conveniently displayed in the navbar for quick reference. A playful checkout button triggers a fun confetti show, adding a touch of joy to the user experience.
+- **Dynamic Shopping Cart:** The shopping cart allows users to effortlessly add up to five units of a product. Experience real-time total updates, conveniently displayed in the navbar for quick reference. A playful checkout button triggers a fun confetti show, adding a touch of joy to the user experience.
 
 - **Responsive Design for Seamless Shopping:** Enjoy a seamless shopping experience across a variety of devices. Whether you're on desktop or mobile, the responsive design ensures an optimal and user-friendly interface, making your browsing and shopping effortless.
 
@@ -35,15 +35,15 @@ If you'd like to explore the project, you can do so by visiting https://curious-
 
 ## Screenshots
 
-### Dashboard
+### Homepage
 
 <img src="/src/assets/screenshots/home-page-full-view.png" alt="Home Page" width="500" />
 
-### Scorecard
+### Shopping Page
 
 <img src="/src/assets/screenshots/shopping-full-view.png" alt="Shop Page" width="500" />
 
-### My Stats
+### Shopping Cart
 
 <img src="/src/assets/screenshots/cart-full-view.png" alt="Cart Page" width="500" />
 
