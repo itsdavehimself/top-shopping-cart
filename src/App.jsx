@@ -3,17 +3,12 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import '@smastrom/react-rating/style.css';
 import { ShopFilterContextProvider } from './context/FilterContext';
 
-const defaultState = {
-  loading: true,
-};
-
 export default function App() {
   const [cart, setCart] = useState([]);
-  const [loading, setLoading] = useState(defaultState.loading);
 
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.sku === item.sku);
@@ -50,18 +45,12 @@ export default function App() {
     );
   };
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
   return (
-    <div className="app" style={{ visibility: loading ? 'hidden' : 'visible' }}>
-      <ShopFilterContextProvider>
-        <Navbar cart={cart} />
-        <ScrollToTop />
-        <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
-        <Footer />
-      </ShopFilterContextProvider>
-    </div>
+    <ShopFilterContextProvider>
+      <Navbar cart={cart} />
+      <ScrollToTop />
+      <Outlet context={[addToCart, removeFromCart, cart, updateQuantity]} />
+      <Footer />
+    </ShopFilterContextProvider>
   );
 }
