@@ -17,11 +17,14 @@ export default function Footer() {
           <div className={styles.about}>
             <h3>ABOUT THE PROJECT</h3>
             <p>
-              This project was made as part of The Odin Project&apos;s
-              JavaScript curriculum. The purpose of this shopping cart project
-              is to explore and utilize ReactJS, React testing, and React
-              routing in conjunction with CSS modules. The site is made fully
-              responsive to work and look good both on mobile and desktop.
+              Welcome to my Shopping Cart App, a fun project born out of my
+              journey through The Odin Project&apos;s JavaScript/React
+              curriculum. Designed to showcase my skills as a junior web
+              developer, this project explores the realms of ReactJS, React
+              testing, and React routing, complemented by the use of CSS
+              modules. The primary goal of this project is to delve into the
+              intricacies of ReactJS, emphasizing the practical implementation
+              of React components, state management, and routing.
             </p>
           </div>
         </div>
