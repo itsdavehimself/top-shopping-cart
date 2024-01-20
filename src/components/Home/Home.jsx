@@ -217,7 +217,7 @@ export default function Home() {
           </div>
           <div className={styles['explore-card']}>
             <div className={styles['explore-card-img']}>
-              <div className={styles['explore-laptop-img']}>
+              <div className={styles['explore-monitor-img']}>
                 <div className={styles['explore-img-overlay']}>
                   <Link to="/shop" onClick={handleLinkClick}>
                     <button
@@ -231,11 +231,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <h5 className={styles['explore-label']}>Gaming Laptops</h5>
+            <h5 className={styles['explore-label']}>Gaming Monitors</h5>
           </div>
           <div className={styles['explore-card']}>
             <div className={styles['explore-card-img']}>
-              <div className={styles['explore-monitor-img']}>
+              <div className={styles['explore-laptop-img']}>
                 <div className={styles['explore-img-overlay']}>
                   <Link to="/shop" onClick={handleLinkClick}>
                     <button
@@ -249,7 +249,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <h5 className={styles['explore-label']}>Gaming Monitors</h5>
+            <h5 className={styles['explore-label']}>Gaming Laptops</h5>
           </div>
           <div className={styles['explore-card']}>
             <div className={styles['explore-card-img']}>
